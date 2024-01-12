@@ -8,7 +8,16 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'RTTMedia',
-  description: 'Social media account downloader',
+  description: 'Provides services for Reddit, Tumblr, and Twitter media downloader.',
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '/RTTMedia.ico',
+        href: '/RTTMedia.ico',
+      },
+    ],
+  }
 }
 
 export default function RootLayout({
