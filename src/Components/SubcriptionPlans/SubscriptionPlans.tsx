@@ -22,23 +22,30 @@ export default function SubscriptionPlans() {
 
     return (
         <div className={styles.table}>
+            {plans && plans.map(plan => 
+            (plan.Feature === "Price") ?
             <div className={styles.head}>
-                <div className={styles.cell}>
-                    <span>Compare Plans</span>
+                <div className={styles.cellHead}>
+                    <span>Compare Plans</span>        
                 </div>
-                <div className={styles.cell}>
-                    <span>Free</span>
+                <div className={styles.cellHead}>
+                    <div className={styles.headPlanName}>Free</div>
+                    <div className={`${styles.headCellPrice} ${styles.Free}`}>{plan.Free}</div>
                 </div>
-                <div className={styles.cell}>
-                    <span>Pro</span>
+                <div className={styles.cellHead}>
+                    <div className={styles.headPlanName}>Pro</div>
+                    <div className={`${styles.headCellPrice} ${styles.Pro}`}>{plan.Pro}</div>
                 </div>
-                <div className={styles.cell}>
-                    <span>Life Time</span>
+                <div className={styles.cellHead}>
+                    <div className={styles.headPlanName}>Premiun</div>
+                    <div className={`${styles.headCellPrice} ${styles.Premium}`}>{plan.Premium}</div>
                 </div>
-            </div>
+            </div> : "")
+            }
             <div className={styles.body}>
                 {plans && plans.map(plan => 
-                    <div className={styles.row}>
+                    (plan.Feature !== "Price") ? 
+                    <div className={styles.row} key={plan.Feature}>
                         <div className={styles.rowcell}>
                             <span>{plan.Feature}</span>
                         </div>
@@ -52,6 +59,7 @@ export default function SubscriptionPlans() {
                             <span>{plan.Premium}</span>
                         </div>
                     </div>
+                    : ""
                 )}
             </div>
         </div>
