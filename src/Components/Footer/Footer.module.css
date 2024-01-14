@@ -31,7 +31,7 @@
 
 .FooterContentBox{
     width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .FooterContentBox p{
@@ -72,7 +72,7 @@
     }
 
     .Footerlogo{
-        width: 90%;
+        width: 50%;
         height: auto;
     }
 
