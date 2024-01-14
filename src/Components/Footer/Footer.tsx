@@ -18,11 +18,11 @@ export default function Footer() {
                     <div className={styles.FooterContentBox}>
                         <h3>Legal</h3><br />
                         <p>Terms of User</p><br />
-                        <p>Privacy Policy</p><br />
+                        <p>Privacy Policy</p>
                     </div>
                     <div className={styles.FooterContentBox}>
                         <h3>Company</h3><br />
-                        <p>About Us</p><br />
+                        <p>About Us</p>
                     </div>
                 </div>
                 <div className={styles.FooterContentsEnd}>
