@@ -5,6 +5,7 @@ import styles from './page.module.css'
 import SubscriptionPlans from "@/Components/SubcriptionPlans/SubscriptionPlans"
 
 export default function Home() {
+
   return (
     <main className={styles.body}>
       <div className={styles.info}>

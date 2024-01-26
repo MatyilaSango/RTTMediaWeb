@@ -4,6 +4,13 @@
     padding: 10px 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.logoNavWrapper{
+    display: flex;
+    align-items: center;
 }
 
 .logo{
@@ -13,7 +20,36 @@
 
 .toLink{
     margin-left: 50px;
-    text-decoration: none;
     font-weight: 700;
-    color: black;
+}
+
+.signInSignUpWrapper{
+    width: 200px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.signInWrapper,
+.signUpWrapper{
+    width: 50%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-weight: 700;
+    border: 2px solid;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.signInWrapper{
+    border-color: #2FD2FF;
+}
+
+.signUpWrapper{
+    border-color: #FF0707;
 }
