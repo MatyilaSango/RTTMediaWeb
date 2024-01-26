@@ -24,7 +24,7 @@ export default function SubscriptionPlans() {
         <div className={styles.table}>
             {plans && plans.map(plan => 
             (plan.Feature === "Price") ?
-            <div className={styles.head}>
+            <div className={styles.head} key={plan.Feature}>
                 <div className={styles.cellHead}>
                     <span>Compare Plans</span>        
                 </div>
