@@ -1,0 +1,123 @@
+.subscription-table{
+    width: 1000px;
+}
+
+.head{
+    height: 100px;
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.subscription-body{
+    width: 100%;
+}
+
+
+.cellHead,.rowcell{
+    height: 100%;
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cellHead{
+    flex-flow: row wrap;
+}
+
+.headPlanName{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.headCellPrice{
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.Free{
+    background-image:  linear-gradient(to right, #3EE68A, #11D3C9);
+}
+
+.Pro{
+    background-image:  linear-gradient(to right, #2FD2FF, #7793FE);
+}
+
+.Premium{
+    background-image:  linear-gradient(to right, #FFC420, #FE846D);
+}
+
+.cellHead:nth-child(1){
+    justify-content: start;
+    padding-left: 20px;
+}
+
+.row{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border-top: 1px dotted rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+}
+
+.rowcell:nth-child(1){
+    justify-content: start;
+    background-color: #F3F6FD;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.row:nth-child(1){
+    border-top: none;
+}
+.row:nth-child(1) .rowcell:nth-child(1){
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.row:last-child .rowcell:nth-child(1){
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+@media screen and (max-width: 800px){
+    .head, .row{
+        flex-flow: row wrap;
+        height: 150px;
+    }
+
+    .row{
+        height: 100px;
+    }
+
+    .cellHead:nth-child(1),
+    .rowcell:nth-child(1){
+        width: 100%;
+        height: 20%;
+        justify-content: center;
+    }
+
+    .cellHead{
+        height: 60%;
+    }
+
+    .rowcell:nth-child(1){
+        height: 50%;
+    }
+
+    .rowcell{
+        height: 50%;
+    }
+
+    .row:last-child .rowcell:nth-child(1){
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}

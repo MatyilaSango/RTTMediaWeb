@@ -1,0 +1,13 @@
+.NotFound-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: rgb(204, 204, 204);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.NotFound-wrapper span{
+    font-size: 22px;
+}

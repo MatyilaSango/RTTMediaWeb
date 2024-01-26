@@ -1,0 +1,113 @@
+.SignUpWrapperCon{
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignUp_wrapper{
+    width: 500px;
+    min-height: 500px;
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.SignUp_wrapper__head{
+    height: 30px;
+    position: relative;
+}
+
+.SignUp_wrapper__head__logo{
+    height: 100%;
+    width: auto;
+}
+
+.SignUp_wrapper__head__exit{
+    height: 70%;
+    width: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.SignUp_wrapper__head__exit:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.SignUp_wrapper__body{
+    padding: 30px 30px;    
+}
+
+.SignUp_wrapper__body_name{
+    font-size: 20px;
+    font-weight: 750;
+    display: flex;
+    justify-content: center;
+}
+
+.SignUp_wrapper__body_form_wrapper{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.SignUp_wrapper__body_form_wrapper input,
+.SignUp_wrapper__body_form_wrapper_sign_in_btn{
+    height: 50px;
+    width: 90%;
+    margin-top: 10px;
+    padding: 0 10px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.SignUp_wrapper__body_form_wrapper input:focus{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.SignUp_wrapper__body_form_wrapper_sign_in_btn{
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #071D2B;
+}
+
+.SignUp_wrapper__body_form_wrapper_sign_in_btn img{
+    height: 25px;
+    width: auto;
+}
+
+.SignUp_wrapper__body_form_wrapper__incorrect_SignUp_details{
+    color: red;
+    font-size: 13px;
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.loading {
+    animation: rotating infinite 1s linear;
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
