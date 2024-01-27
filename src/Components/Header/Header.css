@@ -39,17 +39,58 @@
     align-items: center;
     margin-right: 10px;
     font-weight: 700;
-    border: 2px solid;
-    border-radius: 30px;
+    border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     text-decoration: none;
 }
 
+.signInWrapper:hover,
+.signUpWrapper:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 .signInWrapper{
-    border-color: #2FD2FF;
+    background-color: #EAEAEC;
 }
 
 .signUpWrapper{
-    border-color: #FF0707;
+    background-color: #FF070750;
+}
+
+@media screen and (max-width: 800px){
+    .signInSignUpWrapper{
+        position: relative;
+        background-image: url("../../icons/menu.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+
+    .signInWrapper,
+    .signUpWrapper{
+        width: 100px;
+        height: 30px;
+        position: absolute;
+        right: 0;
+        margin-right: 0;
+        border-radius: 0;
+        display: none;
+    }
+    .signInWrapper{
+        top: 30px;
+    }
+
+    .signUpWrapper{
+        top: 60px;
+    }
+
+    .signInSignUpWrapper:hover{
+        .signInWrapper,
+        .signUpWrapper{
+            display: flex;
+        }
+        
+    }
 }
