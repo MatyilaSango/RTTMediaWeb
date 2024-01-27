@@ -4,13 +4,14 @@ import loadingIcon from "../../icons/update.svg"
 import { useEffect, useState } from "react"
 import { ISignIn } from "../../types/types"
 import { Link } from "react-router-dom"
+import { ACCOUNT } from "../../enums/enum"
 
-export default function SignIn({setIsSignInSinUp}: ISignIn) {
+export default function SignIn({dispatch}: ISignIn) {
     const [isSignInLoading, setIsSignInLoading] = useState<boolean>(false)
 
     useEffect(() => {
-        setIsSignInSinUp(prev => prev = true)
-    }, [setIsSignInSinUp])
+        dispatch({type: ACCOUNT.SignIn_Or_SignUp, payload: true})
+    }, [dispatch])
 
     const handleFormDetails = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()

@@ -4,13 +4,14 @@ import loadingIcon from "../../icons/update.svg"
 import { useEffect, useState } from "react"
 import { ISignUp } from "../../types/types"
 import { Link } from "react-router-dom"
+import { ACCOUNT } from "../../enums/enum"
 
-export default function SignUp({setIsSignInSinUp}: ISignUp) {
+export default function SignUp({dispatch}: ISignUp) {
     const [isSignUpLoading, setIsSignUpLoading] = useState<boolean>(false)
 
     useEffect(() => {
-        setIsSignInSinUp(prev => prev = true)
-    }, [setIsSignInSinUp])
+        dispatch({type: ACCOUNT.SignIn_Or_SignUp, payload: true})
+    }, [dispatch])
 
     const handleFormDetails = (e: React.FormEvent<HTMLFormElement>) => {
         document.getElementsByClassName("SignUp_wrapper__body_form_wrapper__incorrect_SignUp_details")[0].classList.remove("show")

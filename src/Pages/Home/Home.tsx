@@ -4,12 +4,13 @@ import './Home.css'
 import SubscriptionPlans from "../../Components/SubcriptionPlans/SubscriptionPlans"
 import { useEffect } from "react"
 import { IHome } from "../../types/types"
+import { ACCOUNT } from "../../enums/enum"
 
-export default function Home({setIsSignInSinUp}: IHome) {
+export default function Home({ dispatch }: IHome) {
 
   useEffect(() => {
-    setIsSignInSinUp(prev => prev = false)
-  }, [])
+    dispatch({ type: ACCOUNT.SignIn_Or_SignUp, payload: false })
+  }, [dispatch])
 
   return (
     <main className="body">

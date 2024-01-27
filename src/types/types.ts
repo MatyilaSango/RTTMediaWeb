@@ -1,18 +1,21 @@
-
 export interface ISubscriptionPlans {
     plans: any[]
 }
 
 export interface IHome {
-    setIsSignInSinUp: React.Dispatch<React.SetStateAction<boolean>>
+    dispatch: React.Dispatch<any>
+}
+
+export interface IProducts {
+    dispatch: React.Dispatch<any>
 }
 
 export interface ISignIn {
-    setIsSignInSinUp: React.Dispatch<React.SetStateAction<boolean>>
+    dispatch: React.Dispatch<any>
 }
 
 export interface ISignUp {
-    setIsSignInSinUp: React.Dispatch<React.SetStateAction<boolean>>
+    dispatch: React.Dispatch<any>
 }
 
 export interface ILayout {
