@@ -8,19 +8,26 @@ import { useReducer } from 'react';
 import Layout from './Components/Layout/Layout';
 import NotFound from './Pages/NotFound/NotFound';
 import { ACCOUNT } from './enums/enum';
+import { IAction, IState } from './types/types';
 
-const reduder = (appState: any, action: any) => {
+const reduder = (appState: IState, action: IAction) => {
   switch (action.type) {
     case ACCOUNT.SignIn_Or_SignUp:
-      return { ...appState, isSignInSinUp: action.payload }
+      return { ...appState, isSignInSinUp: action.payload as boolean }
 
     default:
       return appState
   }
 }
 
+const STATE: IState = { 
+  isSignInSinUp: false, 
+  userAccount: {}, 
+  isUserSignedIn: false 
+}
+
 function App() {
-  const [appState, dispatch] = useReducer(reduder, { isSignInSinUp: false, userAccount: {}, isUserSignedIn: false })
+  const [appState, dispatch] = useReducer(reduder, STATE)
 
   return (
     <div className="App">

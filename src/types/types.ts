@@ -1,28 +1,39 @@
 export interface ISubscriptionPlans {
-    plans: any[]
+  plans: any[];
 }
 
 export interface IHome {
-    dispatch: React.Dispatch<any>
+  dispatch: React.Dispatch<any>;
 }
 
 export interface IProducts {
-    dispatch: React.Dispatch<any>
+  dispatch: React.Dispatch<any>;
 }
 
 export interface ISignIn {
-    dispatch: React.Dispatch<any>
+  dispatch: React.Dispatch<any>;
 }
 
 export interface ISignUp {
-    dispatch: React.Dispatch<any>
+  dispatch: React.Dispatch<any>;
 }
 
 export interface ILayout {
-    isSignInSinUp: boolean
-    children: JSX.Element
+  isSignInSinUp: boolean;
+  children: JSX.Element;
 }
 
 export interface IHeader {
-    isSignInSinUp: boolean
+  isSignInSinUp: boolean;
+}
+
+export interface IState {
+  isSignInSinUp: boolean;
+  userAccount: {};
+  isUserSignedIn: boolean;
+}
+
+export interface IAction {
+    type: string
+    payload: any
 }
