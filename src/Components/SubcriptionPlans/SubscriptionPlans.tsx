@@ -11,7 +11,7 @@ export default function SubscriptionPlans() {
         axios.get("https://rrt-media-server-api.vercel.app/api/v1/plans", {signal: signal, headers: {}})
             .then(data => data.data)
             .then(data => {
-                setPlans(prev => prev = data)
+                if(data.ok) setPlans(prev => prev = data.data)
                 return () => {
                     abortController.abort()
                 }
