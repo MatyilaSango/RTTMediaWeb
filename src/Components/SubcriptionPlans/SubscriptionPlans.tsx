@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react"
 import "./SubscriptionPlans.css"
 import axios from "axios"
+import yesFreeIcon from "../../icons/yes_free.svg"
+import noFreeIcon from "../../icons/no_free.svg"
+import yesProIcon from "../../icons/yes_pro.svg"
+import noProIcon from "../../icons/no_pro.svg"
+import yesPremiumIcon from "../../icons/yes_premium.svg"
+import noPremiumIcon from "../../icons/no_premium.svg"
 
 export default function SubscriptionPlans() {
     const [plans, setPlans] = useState<any[]>()
@@ -48,13 +54,13 @@ export default function SubscriptionPlans() {
                             <span>{plan.Feature}</span>
                         </div>
                         <div className="rowcell">
-                            <span>{plan.Free}</span>
+                            {plan.Free === "Yes" ? (<img alt="yes" src={yesFreeIcon} />) : plan.Free === "No" ? (<img alt="no" src={noFreeIcon} />) : <span>{plan.Free}</span>}
                         </div>
                         <div className="rowcell">
-                            <span>{plan.Pro}</span>
+                            {plan.Pro === "Yes" ? (<img alt="yes" src={yesProIcon} />) : plan.Pro === "No" ? (<img alt="no" src={noProIcon} />) : <span>{plan.Pro}</span>}
                         </div>
                         <div className="rowcell">
-                            <span>{plan.Premium}</span>
+                            {plan.Premium === "Yes" ? (<img alt="yes" src={yesPremiumIcon} />) : plan.Premium === "No" ? (<img alt="no" src={noPremiumIcon} />) : <span>{plan.Premium}</span>}
                         </div>
                     </div>
                     : ""
