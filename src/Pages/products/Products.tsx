@@ -10,8 +10,10 @@ export default function Products({ dispatch }: IProducts) {
   }, [dispatch])
 
   return (
-    <main className="Products">
-      <span>Products</span>
-    </main>
+    <div className="page-body">
+      <main className="Products page-max-width">
+        <span>Products</span>
+      </main>
+    </div>
   )
 }

@@ -13,3 +13,13 @@ a{
 .page-height{
   min-height: calc(100vh - 70px);
 }
+
+.page-body{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.page-max-width{
+  max-width: 1310px;
+}

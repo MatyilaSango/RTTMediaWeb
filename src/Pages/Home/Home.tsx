@@ -13,28 +13,30 @@ export default function Home({ dispatch }: IHome) {
   }, [dispatch])
 
   return (
-    <main className="body">
-      <div className="info">
-        <h1>RTTMedia</h1>
-        <p>Provides services for Reddit, Tumblr, and Twitter media downloader.</p>
-        <div className="btns">
-          <div className="btn">
-            <img className="btnIcon" alt="" src={windowsIcon} />
-            <span>Free download</span>
-          </div>
-          <a href="#subscription-plans">
-            <div className="btnSub">
-              <span>Subscription Plans</span>
+    <div className="page-body">
+      <main className="body page-max-width">
+        <div className="info">
+          <h1>RTTMedia</h1>
+          <p>Provides services for Reddit, Tumblr, and Twitter media downloader.</p>
+          <div className="btns">
+            <div className="btn">
+              <img className="btnIcon" alt="" src={windowsIcon} />
+              <span>Free download</span>
             </div>
-          </a>
+            <a href="#subscription-plans">
+              <div className="btnSub">
+                <span>Subscription Plans</span>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-      <div className="preview">
-        <img alt="" src={previewIcon} />
-      </div>
-      <div id="subscription-plans" className="SubcriptionPlansWrapper">
-        <SubscriptionPlans />
-      </div>
-    </main>
+        <div className="preview">
+          <img alt="" src={previewIcon} />
+        </div>
+        <div id="subscription-plans" className="SubcriptionPlansWrapper">
+          <SubscriptionPlans />
+        </div>
+      </main>
+    </div>
   )
 }

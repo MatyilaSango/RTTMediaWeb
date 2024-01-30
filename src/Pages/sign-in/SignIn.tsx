@@ -31,28 +31,29 @@ export default function SignIn({dispatch}: ISignIn) {
     }
 
     return (
-        <div className="SignInWrapperCon">
-            <div className="SignIn_wrapper">
-                <div className="SignIn_wrapper__head center">
-                    <Link to="/">
-                        <img className="SignIn_wrapper__head__exit" src={exitIcon} alt="" onClick={() => exitSignIn()} />
-                    </Link>
-                </div>
-                <div className="SignIn_wrapper__body">
-                    <div className="SignIn_wrapper__body_name">
-                        <span>Sign in to RTTMedia</span>
+        <div className="page-body">
+            <div className="SignInWrapperCon page-max-width">
+                <div className="SignIn_wrapper">
+                    <div className="SignIn_wrapper__head center">
+                        <Link to="/">
+                            <img className="SignIn_wrapper__head__exit" src={exitIcon} alt="" onClick={() => exitSignIn()} />
+                        </Link>
                     </div>
-                    <form onSubmit={(e) => handleFormDetails(e)} className="SignIn_wrapper__body_form_wrapper">
-                        <input type="text" required placeholder="Username" name="username" />
-                        <input type="password" required placeholder="Password" name="password" />
-                        <div className="SignIn_wrapper__body_form_wrapper__incorrect_signin_details">Incrorrect username or password</div>
-                        <button className="SignIn_wrapper__body_form_wrapper_sign_in_btn" type="submit">
-                            {isSignInLoading ? <img className="loading" alt="" src={loadingIcon} /> : "Sign in"}
-                        </button>
-                    </form>
+                    <div className="SignIn_wrapper__body">
+                        <div className="SignIn_wrapper__body_name">
+                            <span>Sign in to RTTMedia</span>
+                        </div>
+                        <form onSubmit={(e) => handleFormDetails(e)} className="SignIn_wrapper__body_form_wrapper">
+                            <input type="text" required placeholder="Username" name="username" />
+                            <input type="password" required placeholder="Password" name="password" />
+                            <div className="SignIn_wrapper__body_form_wrapper__incorrect_signin_details">Incrorrect username or password</div>
+                            <button className="SignIn_wrapper__body_form_wrapper_sign_in_btn" type="submit">
+                                {isSignInLoading ? <img className="loading" alt="" src={loadingIcon} /> : "Sign in"}
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-
     )
 }

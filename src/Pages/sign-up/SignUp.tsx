@@ -41,32 +41,33 @@ export default function SignUp({dispatch}: ISignUp) {
     }
 
     return (
-        <div className="SignUpWrapperCon">
-            <div className="SignUp_wrapper">
-                <div className="SignUp_wrapper__head center">
-                <Link to="/">
-                    <img className="SignUp_wrapper__head__exit" src={exitIcon} alt="" onClick={() => exitSignUp()} />
-                </Link>
-                </div>
-                <div className="SignUp_wrapper__body">
-                    <div className="SignUp_wrapper__body_name">
-                        <span>Sign up to RTTMedia</span>
+        <div className="page-body">
+            <div className="SignUpWrapperCon page-max-width">
+                <div className="SignUp_wrapper">
+                    <div className="SignUp_wrapper__head center">
+                    <Link to="/">
+                        <img className="SignUp_wrapper__head__exit" src={exitIcon} alt="" onClick={() => exitSignUp()} />
+                    </Link>
                     </div>
-                    <form onSubmit={(e) => handleFormDetails(e)} className="SignUp_wrapper__body_form_wrapper">
-                        <input type="text" required placeholder="First Name" name="firstName" />
-                        <input type="text" required placeholder="Last Name" name="lastName" />
-                        <input type="email" required placeholder="Email@mail.com" name="email" />
-                        <input type="text" required placeholder="Username" name="username" />
-                        <input type="password" required placeholder="Password" name="password" />
-                        <input type="password" required placeholder="Re-enter password" name="reEnterPassword" />
-                        <div className="SignUp_wrapper__body_form_wrapper__incorrect_SignUp_details">Passwords do not match...</div>
-                        <button className="SignUp_wrapper__body_form_wrapper_sign_in_btn" type="submit">
-                            {isSignUpLoading ? <img className="loading" alt="" src={loadingIcon} /> : "Sign in"}
-                        </button>
-                    </form>
+                    <div className="SignUp_wrapper__body">
+                        <div className="SignUp_wrapper__body_name">
+                            <span>Sign up to RTTMedia</span>
+                        </div>
+                        <form onSubmit={(e) => handleFormDetails(e)} className="SignUp_wrapper__body_form_wrapper">
+                            <input type="text" required placeholder="First Name" name="firstName" />
+                            <input type="text" required placeholder="Last Name" name="lastName" />
+                            <input type="email" required placeholder="Email@mail.com" name="email" />
+                            <input type="text" required placeholder="Username" name="username" />
+                            <input type="password" required placeholder="Password" name="password" />
+                            <input type="password" required placeholder="Re-enter password" name="reEnterPassword" />
+                            <div className="SignUp_wrapper__body_form_wrapper__incorrect_SignUp_details">Passwords do not match...</div>
+                            <button className="SignUp_wrapper__body_form_wrapper_sign_in_btn" type="submit">
+                                {isSignUpLoading ? <img className="loading" alt="" src={loadingIcon} /> : "Sign in"}
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-
     )
 }
