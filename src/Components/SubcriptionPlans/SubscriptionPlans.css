@@ -1,5 +1,8 @@
 .subscription-table{
     width: 1000px;
+    box-shadow: 0 0 10px #071D2B50;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .head{

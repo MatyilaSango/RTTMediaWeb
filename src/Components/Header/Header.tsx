@@ -5,7 +5,7 @@ import { IHeader } from "../../types/types"
 
 export default function Header({isSignInSinUp}: IHeader) {
   return (
-    <div className="page-body">
+    <div className="page-body box-shadow">
       <div className="header page-max-width">
         <div className="logoNavWrapper">
           <Link to="/">
