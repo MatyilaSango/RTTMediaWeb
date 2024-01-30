@@ -49,12 +49,12 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.signInWrapper{
-    background-color: #EAEAEC;
+.signUpWrapper{
+    background-color: #FF0707;
 }
 
-.signUpWrapper{
-    background-color: #FF070750;
+.signUpWrapper span{
+    color: white;
 }
 
 @media screen and (max-width: 800px){
