@@ -1,20 +1,23 @@
 import "./SignUp.css"
 import exitIcon from "../../icons/close.svg"
 import loadingIcon from "../../icons/update.svg"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { ISignUp } from "../../types/types"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { ACCOUNT } from "../../enums/enum"
+import Confirmation from "../../Components/Confirmation/Confirmation"
 
 export default function SignUp({dispatch}: ISignUp) {
     const [isSignUpLoading, setIsSignUpLoading] = useState<boolean>(false)
+    const [isRegistered, setIsRegistered] = useState<boolean>(false)
+    const navigate = useNavigate()
+    let incorrectPasswordsRef = useRef(false)
 
     useEffect(() => {
         dispatch({type: ACCOUNT.SignIn_Or_SignUp, payload: true})
     }, [dispatch])
 
-    const handleFormDetails = (e: React.FormEvent<HTMLFormElement>) => {
-        document.getElementsByClassName("SignUp_wrapper__body_form_wrapper__incorrect_SignUp_details")[0].classList.remove("show")
+    const handleFormDetails = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (!isSignUpLoading) {
             const inputValues = Array.from(e.currentTarget)
@@ -30,18 +33,48 @@ export default function SignUp({dispatch}: ISignUp) {
             const password: string = inputValues[4].value
             //@ts-ignore
             const reEnteredPassword: string = inputValues[5].value
-            if(password !== reEnteredPassword) return document.getElementsByClassName("SignUp_wrapper__body_form_wrapper__incorrect_SignUp_details")[0].classList.add("show")
-            console.log({firstName, lastName, email, username, password})
+
             setIsSignUpLoading(prev => prev = true)
+            incorrectPasswordsRef.current = false
+
+            if(password !== reEnteredPassword) {
+                incorrectPasswordsRef.current = true
+                setIsSignUpLoading(prev => prev = false)
+                return
+            }
+            
+            const userResponse = await (await fetch("https://rrt-media-server-api.vercel.app/api/v1/users", {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                FirstName: firstName,
+                LastName: lastName,
+                Username: username,
+                Email: email,
+                Password: password
+                })
+            })).json()
+    
+            if(!userResponse.ok) {
+                setIsSignUpLoading(prev => prev = false)
+                incorrectPasswordsRef.current = true
+                return
+            }
+
+            setIsRegistered(prev => prev = true)
         }
     }
 
     const exitSignUp = () => {
-
+        setIsRegistered(prev => prev = false)
+        navigate("/sign-in")
     }
 
     return (
         <div className="page-body">
+            {isRegistered ? <Confirmation message="Signed up successfully." func={exitSignUp}/> : ""}
             <div className="SignUpWrapperCon page-max-width">
                 <div className="SignUp_wrapper">
                     <div className="SignUp_wrapper__head center">
@@ -60,9 +93,9 @@ export default function SignUp({dispatch}: ISignUp) {
                             <input type="text" required placeholder="Username" name="username" />
                             <input type="password" required placeholder="Password" name="password" />
                             <input type="password" required placeholder="Re-enter password" name="reEnterPassword" />
-                            <div className="SignUp_wrapper__body_form_wrapper__incorrect_SignUp_details">Passwords do not match...</div>
+                            <div className={`SignUp_wrapper__body_form_wrapper__incorrect_SignUp_details ${incorrectPasswordsRef.current ? 'show' : ''}`}>Passwords do not match...</div>
                             <button className="SignUp_wrapper__body_form_wrapper_sign_in_btn" type="submit">
-                                {isSignUpLoading ? <img className="loading" alt="" src={loadingIcon} /> : "Sign in"}
+                                {isSignUpLoading ? <img className="loading" alt="" src={loadingIcon} /> : "Sign up"}
                             </button>
                         </form>
                     </div>
