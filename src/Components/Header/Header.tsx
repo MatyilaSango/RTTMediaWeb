@@ -1,6 +1,6 @@
 import "./Header.css"
 import { Link } from "react-router-dom"
-import logoIcon from "../../icons/RRTMedia.png"
+import logoIcon from "../../icons/RTTMedia.png"
 import userIcon from "../../icons/user.svg"
 import { IHeader } from "../../types/types"
 

@@ -1,5 +1,5 @@
 import "./Footer.css"
-import logoIcon from "../../icons/RRTMedia.png"
+import logoIcon from "../../icons/RTTMedia-splash.png"
 
 export default function Footer() {
   return (

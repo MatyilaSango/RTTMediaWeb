@@ -53,8 +53,8 @@
 }
 
 .Footerlogo{
-    height: 150px;
-    width: auto;
+    max-width: 150px;
+    height: fit-content;
 }
 
 .FooterCopyRight{
@@ -80,11 +80,6 @@
 
     .FooterCon{
         padding: 30px;
-    }
-
-    .Footerlogo{
-        width: 150px;
-        height: auto;
     }
 
     .FooterContentsEnd{
