@@ -22,6 +22,11 @@ export interface ISignUp {
   dispatch: React.Dispatch<IAction>;
 }
 
+export interface IConfirmation {
+  message: string
+  func: () => void
+}
+
 export interface ILayout {
   isSignInSinUp: boolean;
   children: JSX.Element;

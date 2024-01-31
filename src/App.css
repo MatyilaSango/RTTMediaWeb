@@ -23,3 +23,9 @@ a{
 .page-max-width{
   max-width: 1310px;
 }
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
