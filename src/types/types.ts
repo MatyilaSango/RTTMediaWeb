@@ -3,28 +3,34 @@ export interface ISubscriptionPlans {
 }
 
 export interface IHome {
-  dispatch: React.Dispatch<any>;
+  dispatch: React.Dispatch<IAction>;
 }
 
 export interface IProducts {
-  dispatch: React.Dispatch<any>;
+  dispatch: React.Dispatch<IAction>;
+}
+
+export interface IAccount {
+  dispatch: React.Dispatch<IAction>;
 }
 
 export interface ISignIn {
-  dispatch: React.Dispatch<any>;
+  dispatch: React.Dispatch<IAction>;
 }
 
 export interface ISignUp {
-  dispatch: React.Dispatch<any>;
+  dispatch: React.Dispatch<IAction>;
 }
 
 export interface ILayout {
   isSignInSinUp: boolean;
   children: JSX.Element;
+  isUserSignedIn: boolean
 }
 
 export interface IHeader {
   isSignInSinUp: boolean;
+  isUserSignedIn: boolean
 }
 
 export interface IState {
