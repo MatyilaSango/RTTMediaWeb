@@ -3,12 +3,13 @@ import exitIcon from "../../icons/close.svg"
 import loadingIcon from "../../icons/update.svg"
 import { useEffect, useState, useRef } from "react"
 import { ISignIn } from "../../types/types"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { ACCOUNT } from "../../enums/enum"
 
 export default function SignIn({dispatch}: ISignIn) {
     const [isSignInLoading, setIsSignInLoading] = useState<boolean>(false)
     let incorrectRef = useRef(false)
+    const navigate = useNavigate()
 
     useEffect(() => {
         dispatch({type: ACCOUNT.SignIn_Or_SignUp, payload: true})
@@ -45,6 +46,7 @@ export default function SignIn({dispatch}: ISignIn) {
             }
 
             dispatch({type: ACCOUNT.SignIn, payload: {account: userResponse.data}})
+            navigate("/")
         }
     }
 
