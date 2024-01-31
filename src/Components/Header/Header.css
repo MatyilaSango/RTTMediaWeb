@@ -34,7 +34,8 @@
 }
 
 .signInWrapper,
-.signUpWrapper{
+.signUpWrapper,
+.Header--account{
     width: 50%;
     height: 90%;
     display: flex;
@@ -56,8 +57,24 @@
     background-color: #FF0707;
 }
 
+.signInWrapper,
+.Header--account{
+    background-color: white;
+}
+
 .signUpWrapper span{
     color: white;
+}
+
+.Header--account a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Header--account img{
+    height: 20px;
+    width: auto;
+    margin-right: 5px;
 }
 
 @media screen and (max-width: 800px){
@@ -72,7 +89,8 @@
     }
 
     .signInWrapper,
-    .signUpWrapper{
+    .signUpWrapper,
+    .Header--account{
         width: 100px;
         height: 30px;
         position: absolute;
@@ -80,8 +98,10 @@
         margin-right: 0;
         border-radius: 0;
         display: none;
+        border: 1px solid rgb(196, 196, 196);
     }
-    .signInWrapper{
+    .signInWrapper,
+    .Header--account{
         top: 30px;
     }
 
@@ -91,7 +111,8 @@
 
     .signInSignUpWrapper:hover{
         .signInWrapper,
-        .signUpWrapper{
+        .signUpWrapper,
+        .Header--account{
             display: flex;
         }
         
