@@ -44,10 +44,7 @@ export default function SignIn({dispatch}: ISignIn) {
                 return
             }
 
-            console.log(userResponse)
-
             dispatch({type: ACCOUNT.SignIn, payload: {account: userResponse.data}})
-
         }
     }
 
