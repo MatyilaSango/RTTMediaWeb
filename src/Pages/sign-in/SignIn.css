@@ -7,7 +7,8 @@
 }
 
 .SignIn_wrapper{
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     height: 500px;
     background-color: white;
     border-radius: 30px;
@@ -112,5 +113,16 @@
 
     100% {
         transform: rotate(-360deg);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .SignIn_wrapper__body_form_wrapper input,
+    .SignIn_wrapper__body_form_wrapper_sign_in_btn{
+        width: 100%;
+    }
+
+    .SignIn_wrapper__body{
+        padding: 30px 20px;
     }
 }
