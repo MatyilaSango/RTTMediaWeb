@@ -18,7 +18,7 @@ export default function Footer() {
                         <div className="FooterContentBox">
                             <h3>Help</h3><br />
                             <p>Tutorial</p><br />
-                            <p>Contuct us</p>
+                            <p>Contact us</p>
                         </div>
                         <div className="FooterContentBox">
                             <h3>Legal</h3><br />
