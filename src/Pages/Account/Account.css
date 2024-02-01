@@ -1,3 +1,75 @@
-.Products{
-    
+.Account{
+    width: 100%;
+    padding: 30px;
 }
+
+.Account-details-wrapper{
+    margin-top: 30px;
+    display: flex;
+}
+
+.Account-details-wrapper__nav,
+.Account-details-wrapper__details{
+    padding: 20px 10px;
+}
+
+.Account-details-wrapper__nav{
+    width: 250px;
+}
+
+.Account-details-wrapper__nav__avator-username{
+    height: 150px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.Account-details-wrapper__nav__avator{
+    height: 70%;
+}
+
+.Account-details-wrapper__nav__avator img{
+    height: 80%;
+    width: auto;
+    background-color: rgb(214, 214, 214);
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.Account-details-wrapper__nav__username{
+    font-size: 15px;
+    font-weight: 600;
+    height: 30%;
+}
+
+.Account-details-wrapper__nav__btns-wrapper__acc-det--sign-out{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.Account-details-wrapper__nav__btns-wrapper__acc-det--sign-out span{
+    padding: 0 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.acc-btn-icon{
+    height: 18px;
+    width: auto;
+    margin-right: 5px;
+}
+
+.Account-details-wrapper__nav__btns-wrapper__acc-det--sign-out:hover{
+    background-color: #140A35;
+    color: white;
+}
+
+.Account-details-wrapper__details{
+    padding: 20px 30px;
+    width: calc(100% - 250px);
+}
+

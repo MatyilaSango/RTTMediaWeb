@@ -12,6 +12,9 @@ export interface IProducts {
 
 export interface IAccount {
   dispatch: React.Dispatch<IAction>;
+  userAccount: {
+    [name: string]: any
+  }
 }
 
 export interface ISignIn {
@@ -20,6 +23,13 @@ export interface ISignIn {
 
 export interface ISignUp {
   dispatch: React.Dispatch<IAction>;
+}
+
+export interface IAccountDetails{
+  title: string;
+  object: {
+    [name: string]: any
+  }
 }
 
 export interface IConfirmation {

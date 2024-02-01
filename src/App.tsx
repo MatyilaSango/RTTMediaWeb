@@ -41,7 +41,7 @@ function App() {
           <Route path='/products' element={<Products dispatch={dispatch} />} />
           <Route path='/sign-in' element={<SignIn dispatch={dispatch} />} />
           <Route path='/sign-up' element={<SignUp dispatch={dispatch} />} />
-          <Route path='/account' element={<Account dispatch={dispatch} />} />
+          <Route path='/account' element={<Account dispatch={dispatch} userAccount={appState.userAccount}/>} />
           <Route path='/*' element={<NotFound />} />
         </Routes>
       </Layout>
