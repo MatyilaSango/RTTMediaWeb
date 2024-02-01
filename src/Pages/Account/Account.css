@@ -3,6 +3,10 @@
     padding: 30px;
 }
 
+.Account__heading{
+    padding: 0 5px;
+}
+
 .Account-details-wrapper{
     margin-top: 30px;
     display: flex;
@@ -10,11 +14,11 @@
 
 .Account-details-wrapper__nav,
 .Account-details-wrapper__details{
-    padding: 20px 10px;
+    padding: 20px 0px;
 }
 
 .Account-details-wrapper__nav{
-    width: 250px;
+    width: 200px;
 }
 
 .Account-details-wrapper__nav__avator-username{
@@ -70,6 +74,6 @@
 
 .Account-details-wrapper__details{
     padding: 20px 30px;
-    width: calc(100% - 250px);
+    width: calc(100% - 200px);
 }
 

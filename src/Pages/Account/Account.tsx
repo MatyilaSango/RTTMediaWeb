@@ -17,7 +17,7 @@ export default function Account({ dispatch, userAccount }: IAccount) {
   return (
     <div className="page-body page-height">
       <main className="Account page-max-width">
-        <h1>My Account</h1>
+        <h1 className="Account__heading">My Account</h1>
         <div className="Account-details-wrapper">
           <nav className="Account-details-wrapper__nav">
             <div className="Account-details-wrapper__nav__avator-username">
