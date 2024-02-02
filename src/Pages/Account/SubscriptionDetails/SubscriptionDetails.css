@@ -1,0 +1,8 @@
+.SubscriptionDetails-wrapper{
+    width: 100%;
+}
+.SubscriptionDetails__heading{
+    line-height: 25px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    width: 100%;
+}

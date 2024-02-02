@@ -1,18 +1,24 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { IAccount } from "../../types/types"
 import "./Account.css"
 import { ACCOUNT } from "../../enums/enum"
 import avatorIcon from "../../icons/user.svg"
 import logoutIcon from "../../icons/logout.svg"
 import subscriptionIcon from "../../icons/subscription.svg"
-import AccountDetails from "../../Components/AccountDetails/AccountDetails"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 
 export default function Account({ dispatch, userAccount }: IAccount) {
-  const [currentAccountPage, setCurrentAccountPage] = useState<string>("Personal Details")
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch({ type: ACCOUNT.SignIn_Or_SignUp, payload: false })
+    if(!userAccount?.userName) navigate("*")
   }, [dispatch])
+
+  const handleLogOut = () => {
+    dispatch({type: "signOut", payload: userAccount})
+    navigate("/")
+  }
 
   return (
     <div className="page-body page-height">
@@ -25,24 +31,27 @@ export default function Account({ dispatch, userAccount }: IAccount) {
                 <img alt="avator" src={avatorIcon} />
               </div>
               <div className="Account-details-wrapper__nav__username center">
-                {userAccount.Username.toUpperCase()}
+                {userAccount?.Username?.toUpperCase()}
               </div>
             </div>
             <div className="Account-details-wrapper__nav__btns-wrapper">
-              <div className="Account-details-wrapper__nav__btns-wrapper__acc-det--sign-out" onClick={() => {setCurrentAccountPage(prev => prev = "Personal Details")}}>
-                <span><img alt="icon" className="acc-btn-icon" src={avatorIcon} />Personal Details</span>
-              </div>
-              <div className="Account-details-wrapper__nav__btns-wrapper__acc-det--sign-out" onClick={() => {setCurrentAccountPage(prev => prev = "Subscriptions")}}>
-                <span><img alt="icon" className="acc-btn-icon" src={subscriptionIcon} />Subscriptions</span>
-              </div>
-              <div className="Account-details-wrapper__nav__btns-wrapper__acc-det--sign-out">
+              <Link to="personal-details">
+                  <div className="Account-details-wrapper__nav__btns-wrapper__acc-det--sign-out">
+                  <span><img alt="icon" className="acc-btn-icon" src={avatorIcon} />Personal Details</span>
+                </div>
+              </Link>
+              <Link to="subscription-details">
+                <div className="Account-details-wrapper__nav__btns-wrapper__acc-det--sign-out">
+                  <span><img alt="icon" className="acc-btn-icon" src={subscriptionIcon} />Subscriptions</span>
+                </div>
+              </Link>
+              <div className="Account-details-wrapper__nav__btns-wrapper__acc-det--sign-out" onClick={() => {handleLogOut()}}>
                 <span><img alt="icon" className="acc-btn-icon" src={logoutIcon} />Sign Out</span>
               </div>
-
             </div>
           </nav>
           <div className="Account-details-wrapper__details">
-              <AccountDetails title={currentAccountPage} object={userAccount} />
+              <Outlet />
           </div>
         </div>
       </main>

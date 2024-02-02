@@ -26,7 +26,7 @@ export interface ISignUp {
 }
 
 export interface IAccountDetails{
-  title: string;
+  dispatch: React.Dispatch<IAction>;
   object: {
     [name: string]: any
   }
