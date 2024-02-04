@@ -22,6 +22,12 @@ export interface ISignUp {
   dispatch: React.Dispatch<IAction>;
 }
 
+export interface IProductCard {
+  backgroundColor: string;
+  name: string;
+  description: string;
+}
+
 export interface IConfirmation {
   message: string
   func: () => void
@@ -47,4 +53,9 @@ export interface IState {
 export interface IAction {
     type: string
     payload: any
+}
+
+export interface ISupportCard{
+  image: string;
+  description: string
 }
