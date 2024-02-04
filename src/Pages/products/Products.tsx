@@ -7,6 +7,7 @@ import SupportCard from "../../Components/SupportCard/SupportCard"
 import hdIcon from "../../icons/hd-support.svg"
 import batchIcon from "../../icons/batch-support.svg"
 import fastIcon from "../../icons/fast-support.svg"
+import { products } from "../../Data/data"
 
 export default function Products({ dispatch }: IProducts) {
 
@@ -30,16 +31,14 @@ export default function Products({ dispatch }: IProducts) {
               <SupportCard image={batchIcon} description="Batch download" />
               <SupportCard image={fastIcon} description="10x fast download" />
             </div>
-            <ProductCard 
-              backgroundColor="#FF0000" 
-              name="ReddderDownloader"
-              description="Description"
-            />
-            <ProductCard 
-              backgroundColor="#FF0000" 
-              name="ReddderDownloader"
-              description="Description"
-            />
+            {products.map(product => (
+              <ProductCard 
+                key={product.name}
+                backgroundColor={product.color}
+                name={product.name}
+                description={product.description}
+              />
+            ))}
           </main>
         </div>
       </main>

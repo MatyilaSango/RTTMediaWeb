@@ -38,4 +38,5 @@
 .ProductCard-wrapper__description span{
     max-width: 100%;
     text-align: center;
+    line-height: 25px;
 }
