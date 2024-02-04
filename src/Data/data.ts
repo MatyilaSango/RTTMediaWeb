@@ -7,19 +7,19 @@ export const products = [
         color: "#FF0000",
         name: "ReddderDownloader",
         image: rdPreview,
-        description: "ReddderDownloader supports downloading reddit media. It can download the whole subreddit/user account with just few clicks. Downloads videos and pictures in HD qualiaty (same as source)."
+        description: "ReddderDownloader supports downloading Reddit media. It can download the whole subreddit/user account with just few clicks. Downloads videos and pictures in HD quality (same as source)."
     },
     {
         color: "#1A8CD8",
         name: "TwiMedia",
         image: twPreview,
-        description: "TwiMedia supports downloading twitter media. It can download the whole user account with just few clicks. Downloads videos and pictures in HD qualiaty (same as source)."
+        description: "TwiMedia supports downloading Twitter media. It can download the whole user account with just a few clicks. Downloads videos and pictures in HD quality (same as source)."
     },
     {
         color: "#2600A1",
         name: "TumMedia",
         image: tmPreview,
-        description: "TumMedia supports downloading tumblr media. It can download the whole user account with just few clicks. Downloads videos and pictures in HD qualiaty (same as source)."
+        description: "TumMedia supports downloading Tumblr media. It can download the whole user account with just a few clicks. Downloads videos and pictures in HD quality (same as source)."
     }
 ]
 
