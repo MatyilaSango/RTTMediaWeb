@@ -1,0 +1,23 @@
+.SupportCard-card{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.SupportCard-img-wrapper{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.SupportCard-img-wrapper img{
+    width: 30px;
+    height: auto;
+}
+
+.SupportCard-description{
+    font-weight: 600;
+}
