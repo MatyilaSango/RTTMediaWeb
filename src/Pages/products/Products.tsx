@@ -36,6 +36,7 @@ export default function Products({ dispatch }: IProducts) {
                 key={product.name}
                 backgroundColor={product.color}
                 name={product.name}
+                image={product.image}
                 description={product.description}
               />
             ))}

@@ -26,6 +26,7 @@ export interface IProductCard {
   backgroundColor: string;
   name: string;
   description: string;
+  image: string
 }
 
 export interface IConfirmation {

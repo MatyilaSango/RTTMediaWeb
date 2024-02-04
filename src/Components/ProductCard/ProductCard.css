@@ -26,9 +26,11 @@
 }
 
 .ProductCard-wrapper__preview-img{
-    height: 300px;
-    background-color: rgb(206, 206, 206);
-    padding: 20px;
+    min-height: 100px;
+}
+
+.ProductCard-wrapper__preview-img img{
+    width: 100%;
 }
 
 .ProductCard-wrapper__description{
