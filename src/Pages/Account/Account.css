@@ -10,6 +10,7 @@
 .Account-details-wrapper{
     margin-top: 30px;
     display: flex;
+    position: relative;
 }
 
 .Account-details-wrapper__nav,
@@ -77,3 +78,40 @@
     width: calc(100% - 200px);
 }
 
+@media screen and (max-width: 800px) {
+    .Account__heading{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .Account__heading-menu{
+        background-image: url("../../icons/menu.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .Account-details-wrapper__nav{
+        min-height: 500px;
+        height: 100%;
+        width: 250px;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: white;
+        z-index: 100;
+        box-shadow: 10px 0 10px rgba(0, 0, 0, 0.575);    
+    }
+
+    .Account-details-wrapper__details{
+        width: 100%;
+    }    
+}

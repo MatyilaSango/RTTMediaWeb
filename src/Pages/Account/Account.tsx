@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import { IAccount } from "../../types/types"
 import "./Account.css"
 import { ACCOUNT } from "../../enums/enum"
@@ -9,10 +9,11 @@ import { Link, Outlet, useNavigate } from "react-router-dom"
 
 export default function Account({ dispatch, userAccount }: IAccount) {
   const navigate = useNavigate()
+  const [toggleMenuOnOff, setToggleMenuOnOff] = useState<boolean>(false)
 
   useEffect(() => {
     dispatch({ type: ACCOUNT.SignIn_Or_SignUp, payload: false })
-    if(!userAccount?.userName) navigate("*")
+    if(!userAccount?.Username) navigate("*")
   }, [dispatch])
 
   const handleLogOut = () => {
@@ -23,9 +24,12 @@ export default function Account({ dispatch, userAccount }: IAccount) {
   return (
     <div className="page-body page-height">
       <main className="Account page-max-width">
-        <h1 className="Account__heading">My Account</h1>
+        <h1 className="Account__heading">
+          <div className="Account__heading-menu" onClick={() => {setToggleMenuOnOff(prev => prev = !prev)}}></div>
+          <span>My Account</span>
+        </h1>
         <div className="Account-details-wrapper">
-          <nav className="Account-details-wrapper__nav">
+          <nav className="Account-details-wrapper__nav" style={{display: toggleMenuOnOff ? "block" : "none"}}>
             <div className="Account-details-wrapper__nav__avator-username">
               <div className="Account-details-wrapper__nav__avator center">
                 <img alt="avator" src={avatorIcon} />
