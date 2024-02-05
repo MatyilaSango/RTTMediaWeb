@@ -1,0 +1,58 @@
+.PersonalDetails-wrapper{
+    width: 100%;
+}
+.PersonalDetails__heading{
+    line-height: 25px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    width: 100%;
+    font-size: 22px;
+}
+
+.PersonalDetails__form{
+    margin-top: 20px;
+    max-width: 350px;
+    width: 100%;
+}
+
+.PersonalDetails__form-input{
+    margin-bottom: 20px;
+}
+
+.PersonalDetails__form-input span{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.PersonalDetails__form-input input{
+    background-color: #F4F6F8;
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid rgb(161, 161, 161);
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.PersonalDetails__form-btn{
+    height: 50px;
+    width: 100px;
+    padding: 0 10px;
+    font-size: 15px;
+    border: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.PersonalDetails__form-btn{
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #140A35;
+}
+
+.PersonalDetails__form-btn img{
+    height: 25px;
+    width: auto;
+}
