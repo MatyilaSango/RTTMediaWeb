@@ -9,9 +9,7 @@ export default function PersonalDetails({ object, dispatch }: IAccountDetails) {
     const handlePersonalFormDetails = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (!isUpdating) {
-            let updatingUserObject: any = {
-                Uid: object.Uid
-            }
+            let updatingUserObject: any = {}
 
             // setIsUpdating(prev => prev = true)
             const inputValues = Array.from(e.currentTarget)

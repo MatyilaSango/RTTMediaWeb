@@ -6,6 +6,8 @@ import avatorIcon from "../../icons/user.svg"
 import logoutIcon from "../../icons/logout.svg"
 import subscriptionIcon from "../../icons/subscription.svg"
 import { Link, Outlet, useNavigate } from "react-router-dom"
+import axios from "axios"
+axios.defaults.withCredentials = true
 
 export default function Account({ dispatch, userAccount }: IAccount) {
   const navigate = useNavigate()
@@ -15,9 +17,18 @@ export default function Account({ dispatch, userAccount }: IAccount) {
     if(!userAccount?.Username) navigate("*")
   }, [dispatch])
 
-  const handleLogOut = () => {
-    dispatch({type: "signOut", payload: userAccount})
-    navigate("/")
+  const handleLogOut = async () => {
+      axios.delete("http://localhost:3001/api/tokens/clear", {
+          withCredentials: true,
+      })
+      .then(promise => promise.data)
+      .then(deleteTokenResponse => {
+        if(deleteTokenResponse.ok){  
+          dispatch({type: "signOut", payload: userAccount})
+          navigate("/")
+        }
+      })
+      .catch(eror => {})      
   }
 
   return (
