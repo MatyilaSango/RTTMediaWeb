@@ -1,10 +1,12 @@
 import "./SignIn.css"
+import axios from "axios"
 import exitIcon from "../../icons/close.svg"
 import loadingIcon from "../../icons/update.svg"
 import { useEffect, useState, useRef } from "react"
 import { ISignIn } from "../../types/types"
 import { Link, useNavigate } from "react-router-dom"
 import { ACCOUNT } from "../../enums/enum"
+axios.defaults.withCredentials = true
 
 export default function SignIn({dispatch}: ISignIn) {
     const [isSignInLoading, setIsSignInLoading] = useState<boolean>(false)
@@ -28,29 +30,24 @@ export default function SignIn({dispatch}: ISignIn) {
             setIsSignInLoading(prev => prev = true)
             incorrectRef.current = false
             
-            const userResponse = await (await fetch("https://rrt-media-server-api.vercel.app/api/v1/user", {
-                method: "POST",
-                headers: {
-                "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
+            axios.post("https://rrt-media-server-api.vercel.app/api/v1/user/log-in", {
+                withCredentials: true,
                 Username: username,
                 Password: password
-                })
-            })).json()
-    
-            if(!userResponse.ok) {
-                setIsSignInLoading(prev => prev = false)
-                incorrectRef.current = true
-                return
-            }
-
-            dispatch({type: ACCOUNT.SignIn, payload: {account: userResponse.data}})
-            navigate("/")
+            })
+            .then(promise => promise.data)
+            .then(userResponse => {
+                dispatch({type: ACCOUNT.SignIn, payload: {account: userResponse.data}})
+                navigate("/")
+            })
+            .catch(error => {
+                if(!error.ok) {
+                    setIsSignInLoading(prev => prev = false)
+                    incorrectRef.current = true
+                    return
+                }
+            })    
         }
-    }
-
-    const exitSignIn = () => {
     }
 
     return (
@@ -59,7 +56,7 @@ export default function SignIn({dispatch}: ISignIn) {
                 <div className="SignIn_wrapper">
                     <div className="SignIn_wrapper__head center">
                         <Link to="/">
-                            <img className="SignIn_wrapper__head__exit" src={exitIcon} alt="" onClick={() => exitSignIn()} />
+                            <img className="SignIn_wrapper__head__exit" src={exitIcon} alt="" />
                         </Link>
                     </div>
                     <div className="SignIn_wrapper__body">
