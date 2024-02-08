@@ -13,8 +13,8 @@ export interface IProducts {
 export interface IAccount {
   dispatch: React.Dispatch<IAction>;
   userAccount: {
-    [name: string]: any
-  }
+    [name: string]: any;
+  };
 }
 
 export interface ISignIn {
@@ -25,34 +25,34 @@ export interface ISignUp {
   dispatch: React.Dispatch<IAction>;
 }
 
-export interface IAccountDetails{
+export interface IAccountDetails {
   dispatch: React.Dispatch<IAction>;
   object: {
-    [name: string]: any
-  }
+    [name: string]: any;
+  };
 }
 
 export interface IProductCard {
   backgroundColor: string;
   name: string;
   description: string;
-  image: string
+  image: string;
 }
 
 export interface IConfirmation {
-  message: string
-  func: () => void
+  message: string;
+  func: () => void;
 }
 
 export interface ILayout {
   isSignInSinUp: boolean;
   children: JSX.Element;
-  isUserSignedIn: boolean
+  isUserSignedIn: boolean;
 }
 
 export interface IHeader {
   isSignInSinUp: boolean;
-  isUserSignedIn: boolean
+  isUserSignedIn: boolean;
 }
 
 export interface IState {
@@ -62,11 +62,11 @@ export interface IState {
 }
 
 export interface IAction {
-    type: string
-    payload: any
+  type: string;
+  payload: any;
 }
 
-export interface ISupportCard{
+export interface ISupportCard {
   image: string;
-  description: string
+  description: string;
 }

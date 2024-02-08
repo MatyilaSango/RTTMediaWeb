@@ -1,0 +1,57 @@
+.CookiesDisclaimer-wrapper{
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    bottom: 0px;
+    padding: 20px;
+    background-color: #313131;
+    color: rgb(216, 216, 216);
+    font-size: 16px;
+    animation: cookieDisclaimerAnimation 2s;
+    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.329);
+}
+
+@keyframes cookieDisclaimerAnimation {
+    from {
+        height: 0px;
+        bottom: -30px;
+    }
+
+    to{
+        height: auto;
+        bottom: 0;
+    }
+}
+
+.CookiesDisclaimer-wrapper__more{
+    margin-top: 10px;
+}
+
+.CookiesDisclaimer-wrapper__learn-more{
+    color: rgb(158, 158, 158);
+}
+
+.CookiesDisclaimer-wrapper__learn-more:hover{
+    text-decoration: underline;
+}
+
+.CookiesDisclaimer-wrapper__more__ul{
+    padding-left: 30px;
+}
+
+.CookiesDisclaimer-wrapper__bottom{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.CookiesDisclaimer-wrapper__btn{
+    width: 100px;
+    height: 40px;
+    background-color: #FB0707;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
