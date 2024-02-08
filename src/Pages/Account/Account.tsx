@@ -18,7 +18,7 @@ export default function Account({ dispatch, userAccount }: IAccount) {
   }, [dispatch])
 
   const handleLogOut = async () => {
-      axios.delete("http://localhost:3001/api/tokens/clear", {
+      axios.delete("https://rrt-media-server-api.vercel.app/api/tokens/clear", {
           withCredentials: true,
       })
       .then(promise => promise.data)

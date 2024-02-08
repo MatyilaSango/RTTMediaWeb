@@ -30,7 +30,7 @@ export default function SignIn({dispatch}: ISignIn) {
             setIsSignInLoading(prev => prev = true)
             incorrectRef.current = false
             
-            axios.post("http://localhost:3001/api/v1/user/log-in", {
+            axios.post("https://rrt-media-server-api.vercel.app/api/v1/user/log-in", {
                 withCredentials: true,
                 Username: username,
                 Password: password

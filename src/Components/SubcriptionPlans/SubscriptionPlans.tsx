@@ -14,7 +14,7 @@ export default function SubscriptionPlans() {
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
-        axios.get("http://localhost:3001/api/v1/plans/all", {signal: signal})
+        axios.get("https://rrt-media-server-api.vercel.app/api/v1/plans/all", {signal: signal})
             .then(data => data.data)
             .then(data => {
                 if(data.ok) setPlans(prev => prev = data.data)

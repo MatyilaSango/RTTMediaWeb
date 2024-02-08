@@ -42,7 +42,7 @@ function App() {
 
   useEffect(() => {
     if(!isAppRefresh){
-      axios.get("http://localhost:3001/api/v1/user/refresh", {withCredentials: true})
+      axios.get("https://rrt-media-server-api.vercel.app/api/v1/user/refresh", {withCredentials: true})
       .then(promise => promise.data)
       .then(response => {
         if(response.ok){
