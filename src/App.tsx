@@ -25,6 +25,9 @@ const reducer = (appState: IState, action: IAction) => {
     case ACCOUNT.signOut:
       return {...appState, userAccount: {}, isUserSignedIn: false}
 
+    case ACCOUNT.Updated:
+      return {...appState, userAccount: action.payload.account}
+
     default:
       return appState
   }
@@ -42,13 +45,17 @@ function App() {
 
   useEffect(() => {
     if(!isAppRefresh){
-      axios.get("https://rrt-media-server-api.vercel.app/api/v1/user/refresh", {withCredentials: true})
+      const abortController = new AbortController()
+      const signal = abortController.signal
+      axios.get("https://rrt-media-server-api.vercel.app/api/v1/user/refresh", {signal: signal, withCredentials: true})
       .then(promise => promise.data)
       .then(response => {
         if(response.ok){
           dispatch({type: ACCOUNT.SignIn, payload: {account: response.data}})
-          console.log(response.data)
           setIsAppRefresh(prev => prev = true)
+        }
+        return () => {
+          abortController.abort()
         }
       })
       .catch(error => {})

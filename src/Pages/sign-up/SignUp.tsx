@@ -32,12 +32,12 @@ export default function SignUp({dispatch}: ISignUp) {
             //@ts-ignore
             const password: string = inputValues[4].value
             //@ts-ignore
-            const reEnteredPassword: string = inputValues[5].value
+            const confirmedPassword: string = inputValues[5].value
 
             setIsSignUpLoading(prev => prev = true)
             incorrectPasswordsRef.current = false
 
-            if(password !== reEnteredPassword) {
+            if(password !== confirmedPassword) {
                 incorrectPasswordsRef.current = true
                 setIsSignUpLoading(prev => prev = false)
                 return
@@ -92,7 +92,7 @@ export default function SignUp({dispatch}: ISignUp) {
                             <input type="email" required placeholder="Email@mail.com" name="email" />
                             <input type="text" required placeholder="Username" name="username" />
                             <input type="password" required placeholder="Password" name="password" />
-                            <input type="password" required placeholder="Re-enter password" name="reEnterPassword" />
+                            <input type="password" required placeholder="Confirm password" name="confirmedPassword" />
                             <div className={`SignUp_wrapper__body_form_wrapper__incorrect_SignUp_details ${incorrectPasswordsRef.current ? 'show' : ''}`}>Passwords do not match...</div>
                             <button className="SignUp_wrapper__body_form_wrapper_sign_in_btn" type="submit">
                                 {isSignUpLoading ? <img className="loading" alt="" src={loadingIcon} /> : "Sign up"}
