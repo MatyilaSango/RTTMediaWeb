@@ -1,0 +1,60 @@
+.Subscribed-Subscription-wrapper{
+    min-height: 90px;
+    width: 100%;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 5px;
+}
+
+.Subscribed-Subscription__card{
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    display: flex;
+    padding: 10px;
+}
+
+.Subscribed-Subscription__id{
+    width: 20%;
+    font-size: 13px;
+}
+
+.Subscribed-Subscription__product-type-startDate,
+.Subscribed-Subscription__License-endDate{
+    width: 30%;
+    font-size: 14px;
+    height: 100%;    
+}
+
+.Subscribed-Subscription__product,
+.Subscribed-Subscription__License{
+    font-weight: 700;
+    height: 50%;
+}
+
+.Subscribed-Subscription__startDate,
+.Subscribed-Subscription__endDate{
+    font-size: 13px;
+    height: 50%;
+}
+
+.Subscribed-Subscription__Validity{
+    width: 20%;
+    height: 100%;
+}
+
+.Subscribed-Subscription__state{
+    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(248, 248, 248);
+}
+
+.active{
+    background-color: #7ED321;
+}
+
+.expired{
+    background-color: #ED1C23;
+}

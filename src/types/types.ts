@@ -70,3 +70,9 @@ export interface ISupportCard {
   image: string;
   description: string;
 }
+
+export interface ISubscription {
+  userSubscription: {
+    [name: string]: any;
+  }
+}
