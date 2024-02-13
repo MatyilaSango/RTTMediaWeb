@@ -29,7 +29,7 @@ export default function Subscription({ userSubscription }: ISubscription) {
                     </div>
                 </div>
                 <div className="Subscribed-Subscription__Validity center">
-                    <div className="Subscribed-Subscription__state center active">ACTIVE</div>
+                    <div className={`Subscribed-Subscription__state center ${userSubscription.Validity}`}>{userSubscription.Validity}</div>
                 </div>
             </div>
             {showDetailedSubscription ? <SubscriptionDetailed userSubscription={userSubscription} />  : ""}
