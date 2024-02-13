@@ -1,0 +1,19 @@
+.Item-wrapper{
+    margin: 5px 0;
+    font-size: 14px;
+    width: 50%;
+}
+
+.Item-wrapper__name{
+    font-weight: 700;
+}
+
+.Item-wrapper__detail{
+    overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 800px){
+    .Item-wrapper{
+        width: 100%;
+    }
+}

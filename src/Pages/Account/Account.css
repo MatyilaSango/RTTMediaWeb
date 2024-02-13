@@ -108,11 +108,11 @@
         width: 250px;
         display: none;
         position: absolute;
-        left: 0;
+        left: -10px;
         top: 0;
         background-color: white;
         z-index: 100;
-        box-shadow: 10px 0 10px rgba(0, 0, 0, 0.575);    
+        box-shadow: 10px 0 5px rgba(0, 0, 0, 0.575);    
     }
 
     .Account__menu:hover > .Account-details-wrapper__nav{
@@ -122,5 +122,6 @@
 
     .Account-details-wrapper__details{
         width: 100%;
+        padding: 20px 0px;
     }    
 }

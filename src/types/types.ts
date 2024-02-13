@@ -76,3 +76,8 @@ export interface ISubscription {
     [name: string]: any;
   }
 }
+
+export interface IItem {
+  name: string,
+  detail: string
+}
