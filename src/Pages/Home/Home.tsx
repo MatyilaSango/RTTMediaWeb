@@ -1,5 +1,8 @@
 import windowsIcon from "../../icons/windows.svg"
 import previewIcon from "../../icons/preview.svg"
+import redderImg from "../../icons/ReddderDownloader.png"
+import twiMediaImg from "../../icons/TwiMedia.png"
+import tumMediaImg from "../../icons/TumMedia.png"
 import './Home.css'
 import SubscriptionPlans from "../../Components/SubcriptionPlans/SubscriptionPlans"
 import { useEffect } from "react"
@@ -32,6 +35,11 @@ export default function Home({ dispatch }: IHome) {
         </div>
         <div className="preview">
           <img alt="" src={previewIcon} />
+        </div>
+        <div className="available-products">
+          <img className="available-products__reddder" alt="" src={redderImg} />
+          <img className="available-products__twiMedia" alt="" src={twiMediaImg} />
+          <img className="available-products__tumMedia" alt="" src={tumMediaImg} />
         </div>
         <div id="subscription-plans" className="SubcriptionPlansWrapper">
           <SubscriptionPlans />
