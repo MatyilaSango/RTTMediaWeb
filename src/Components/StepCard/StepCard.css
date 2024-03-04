@@ -11,6 +11,11 @@
     overflow: hidden;
 }
 
+.StepCard--wrapper__img-wrapper img{
+    width: 100%;
+    height: auto;
+}
+
 .StepCard--wrapper h4{
     margin: 25px 0;
     color: rgb(34, 34, 34);
