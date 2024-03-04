@@ -1,0 +1,31 @@
+.HowToUseItemCard--wrapper{
+    overflow: hidden;
+    margin: 30px 0;
+    padding: 30px 10px;
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.HowToUseItemCard--wrapper__title{
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: rgb(39, 39, 39);
+}
+
+.HowToUseItemCard__steps-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    gap: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .HowToUseItemCard--wrapper__title{
+        font-size: 25px;
+        text-align: center;
+    }
+    .HowToUseItemCard__steps-wrapper{
+        justify-content: center;    
+    }
+}

@@ -81,3 +81,19 @@ export interface IItem {
   name: string,
   detail: string
 }
+
+export interface IHowToUse{
+  name: string
+  bgColor: string
+}
+
+export interface IHowToUseItemCard{
+  title: string,
+  steps: IStepCard[]
+}
+
+export interface IStepCard{
+  previewShot: string
+  heading: string
+  body: string
+}
