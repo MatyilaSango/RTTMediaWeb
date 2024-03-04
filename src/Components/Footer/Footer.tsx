@@ -1,5 +1,6 @@
 import "./Footer.css"
 import logoIcon from "../../icons/RTTMedia-splash.png"
+import { Link } from "react-router-dom"
 
 export default function Footer() {
   return (
@@ -17,8 +18,16 @@ export default function Footer() {
                         </div>
                         <div className="FooterContentBox">
                             <h3>Help</h3><br />
-                            <p>Tutorial</p><br />
-                            <p>Contact us</p>
+                            <h4>How to use:</h4><br />
+                            <Link to="/how-to-use-reddderdownloader">
+                                <p>ReddderDownloader</p><br />
+                            </Link>
+                            <Link to="/how-to-use-twimedia">
+                                <p>TwiMedia</p><br />
+                            </Link>
+                            <Link to="/how-to-use-tummedia">
+                                <p>TumMedia</p><br />
+                            </Link>
                         </div>
                         <div className="FooterContentBox">
                             <h3>Legal</h3><br />
@@ -27,7 +36,8 @@ export default function Footer() {
                         </div>
                         <div className="FooterContentBox">
                             <h3>Company</h3><br />
-                            <p>About Us</p>
+                            <p>About Us</p><br />
+                            <p>Contact us</p>
                         </div>
                     </div>
                     <div className="FooterContentsEnd">

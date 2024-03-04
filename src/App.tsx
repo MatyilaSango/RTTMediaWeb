@@ -13,6 +13,7 @@ import Account from './Pages/Account/Account';
 import PersonalDetails from './Pages/Account/PersonalDetails/PersonalDetails';
 import SubscriptionDetails from './Pages/Account/SubscriptionDetails/SubscriptionDetails';
 import axios from 'axios';
+import HowToUse from './Pages/How-to-use/HowToUse';
 
 const reducer = (appState: IState, action: IAction) => {
   switch (action.type) {
@@ -68,6 +69,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home dispatch={dispatch} />} />
           <Route path='/products' element={<Products dispatch={dispatch} />} />
+          <Route path='/how-to-use-reddderdownloader' element={<HowToUse name="ReddderDownloader" bgColor='#FF0000'/>} />
+          <Route path='/how-to-use-twimedia' element={<HowToUse name="TwiMedia" bgColor='#1A8CD8'/>} />
+          <Route path='/how-to-use-tummedia' element={<HowToUse name="TumMedia" bgColor='#2600A1'/>} />
           <Route path='/sign-in' element={<SignIn dispatch={dispatch} />} />
           <Route path='/sign-up' element={<SignUp dispatch={dispatch} />} />
           <Route path='/account' element={<Account dispatch={dispatch} userAccount={appState.userAccount}/>}>
