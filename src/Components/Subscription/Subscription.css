@@ -42,6 +42,8 @@
 .Subscribed-Subscription__Validity{
     width: 20%;
     height: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .Subscribed-Subscription__state{

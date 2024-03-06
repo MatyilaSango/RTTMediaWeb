@@ -1,14 +1,14 @@
 import { useState } from "react"
-import { ISubscription } from "../../types/types"
+import { ISubscriptionView } from "../../types/types"
 import SubscriptionDetailed from "../SubscriptionDetailed/SubscriptionDetailed"
 import "./Subscription.css"
 
-export default function Subscription({ userSubscription }: ISubscription) {
+export default function SubscriptionView({ userSubscription, setSubscriptions}: ISubscriptionView) {
     const [showDetailedSubscription, setShowDetailedSubscription] = useState<boolean>(false)
 
     return (
-        <div className='Subscribed-Subscription-wrapper' onClick={() => {setShowDetailedSubscription(prev => prev = !prev)}}>
-            <div className="Subscribed-Subscription__card">
+        <div className='Subscribed-Subscription-wrapper'>
+            <div className="Subscribed-Subscription__card" onClick={() => {setShowDetailedSubscription(prev => prev = !prev)}}>
                 <div className="Subscribed-Subscription__id">
                     <span>ID: {userSubscription.Id}</span>
                 </div>
@@ -32,7 +32,7 @@ export default function Subscription({ userSubscription }: ISubscription) {
                     <div className={`Subscribed-Subscription__state center ${userSubscription.Validity}`}>{userSubscription.Validity}</div>
                 </div>
             </div>
-            {showDetailedSubscription ? <SubscriptionDetailed userSubscription={userSubscription} />  : ""}
+            {showDetailedSubscription ? <SubscriptionDetailed userSubscription={userSubscription} setSubscriptions={setSubscriptions}/>  : ""}
         </div>
     )
 }

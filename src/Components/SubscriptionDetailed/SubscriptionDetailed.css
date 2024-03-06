@@ -6,14 +6,36 @@
 
 .SubscriptionDetailed-wrapper__details-head{
     line-height: 30px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.SubscriptionDetailed-wrapper__details-head span{
     font-size: 18px;
     font-weight: 600;
-    border-bottom: 1px solid rgb(201, 201, 201);
 }
 
 .SubscriptionDetailed-wrapper__items{
     display: flex;
     grid-area: 10px;
     flex-flow: row wrap;
+}
+
+.subscriptiondelete-btn{
+    background-color: #140A35;
+    color: rgb(245, 245, 245);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.subscriptiondelete-btn:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 

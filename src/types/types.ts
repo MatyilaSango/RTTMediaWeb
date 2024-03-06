@@ -72,10 +72,21 @@ export interface ISupportCard {
 }
 
 export interface ISubscription {
-  userSubscription: {
-    [name: string]: any;
-  }
+  Validity: string;
+  ExpiryDate: string | number | Date;
+  DateCreated: string | number | Date;
+  Plan: string;
+  Product: string;
+  Id: number;
+  Uid: string;
 }
+
+export interface ISubscriptionDetailed{
+  userSubscription: ISubscription
+  setSubscriptions: React.Dispatch<React.SetStateAction<ISubscription[]>>
+}
+
+export type ISubscriptionView = ISubscriptionDetailed
 
 export interface IItem {
   name: string,

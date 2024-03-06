@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import Subscription from "../../../Components/Subscription/Subscription"
-import { IAccountDetails } from "../../../types/types"
+import SubscriptionView from "../../../Components/Subscription/Subscription"
+import { IAccountDetails, ISubscription } from "../../../types/types"
 import "./SubscriptionDetails.css"
 import axios from "axios"
 
 export default function SubscriptionDetails({ object, dispatch }: IAccountDetails) {
-    const [subscriptions, setSubscriptions] = useState([])
+    const [subscriptions, setSubscriptions] = useState<ISubscription[]>([])
 
     useEffect(() => {
         const abortController = new AbortController()
@@ -26,7 +26,7 @@ export default function SubscriptionDetails({ object, dispatch }: IAccountDetail
         <div className="SubscriptionDetails-wrapper">
             <h3 className="SubscriptionDetails__heading">Subscriptions</h3>
             <div className="SubscriptionDetails__list">
-                {subscriptions.map((subscriptionData: {}, indx: number) => <Subscription key={indx} userSubscription={subscriptionData} />)}
+                {subscriptions.map((subscriptionData: ISubscription, indx: number) => <SubscriptionView key={indx} userSubscription={subscriptionData} setSubscriptions={setSubscriptions}/>)}
             </div>
         </div>
     )
