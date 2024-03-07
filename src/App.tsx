@@ -71,7 +71,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home dispatch={dispatch} />} />
           <Route path='/products' element={<Products dispatch={dispatch} />} />
-          <Route path='/products/ReddderDownloader' element={<Product dispatch={dispatch} productName='ReddderDownloader' data={products.ReddderDownloader}/>} />
+          <Route path='/products-ReddderDownloader' element={<Product dispatch={dispatch} productName='ReddderDownloader' data={products.ReddderDownloader}/>} />
           <Route path='/products/TwiMedia' element={<Product dispatch={dispatch} productName='TwiMedia' data={products.TwiMedia}/>} />
           <Route path='/products/TumMedia' element={<Product dispatch={dispatch} productName='TumMedia' data={products.TumMedia}/>} />
           <Route path='/how-to-use-reddderdownloader' element={<HowToUse name="ReddderDownloader" bgColor='#FF0000'/>} />
