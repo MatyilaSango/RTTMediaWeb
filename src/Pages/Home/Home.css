@@ -103,6 +103,7 @@
 .SubcriptionPlansWrapper {
   display: flex;
   justify-content: center;
+  flex-flow: row wrap;
   margin-top: 50px;
 }
 
