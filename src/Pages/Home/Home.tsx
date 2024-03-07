@@ -42,7 +42,7 @@ export default function Home({ dispatch }: IHome) {
           <img className="available-products__tumMedia" alt="" src={tumMediaImg} />
         </div>
         <div id="subscription-plans" className="SubcriptionPlansWrapper">
-          <SubscriptionPlans />
+          <SubscriptionPlans isProductPage={false} />
         </div>
       </main>
     </div>
