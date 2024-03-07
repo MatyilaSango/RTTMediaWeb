@@ -12,13 +12,13 @@ export default function Footer() {
                     <div className="FooterContentsStart">
                         <div className="FooterContentBox">
                             <h3>Products</h3><br />
-                            <Link to="/products/ReddderDownloader">
+                            <Link to="/products-ReddderDownloader">
                                 <p>ReddderDownloader</p><br />
                             </Link>
-                            <Link to="/products/TumMedia">
+                            <Link to="/products-TumMedia">
                                 <p>TumMedia</p><br />
                             </Link>
-                            <Link to="/products/TwiMedia">
+                            <Link to="/products-TwiMedia">
                                 <p>TwiMedia</p>
                             </Link>
                         </div>

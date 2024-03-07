@@ -1,6 +1,6 @@
 import Feature from "../../../Components/Feature/Feature"
 import SubscriptionPlans from "../../../Components/SubcriptionPlans/SubscriptionPlans"
-import { MoreAmazingFeauteData } from "../../../Data/data"
+import { MoreAmazingFeauterData } from "../../../Data/data"
 import { IProduct } from "../../../types/types"
 import "./Product.css"
 
@@ -28,7 +28,7 @@ export default function Product({dispatch, productName, data}: IProduct) {
           <div className="Product-wrapper__more-amazing-features">
             <h2 className="Product-wrapper__more-amazing-features__head center">More Amazing Features</h2>
             <div className="Product-wrapper__more-amazing-features__features">
-              {MoreAmazingFeauteData.map((featureData, indx: number) => <Feature key={indx} image={featureData.image} head={featureData.head} body={featureData.body} />)}
+              {MoreAmazingFeauterData.map((featureData, indx: number) => <Feature key={indx} image={featureData.image} head={featureData.head} body={featureData.body} />)}
             </div>
           </div>
         </div>

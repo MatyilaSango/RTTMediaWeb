@@ -16,7 +16,7 @@ export default function ProductCard({backgroundColor, name, description, image}:
                 <span>{description}</span>
             </div>
             <div className="ProductCard-wrapper__more">
-                <Link to={`${name}`}>
+                <Link to={`/products-${name}`}>
                     <span>{'More >>'}</span>
                 </Link>    
             </div>

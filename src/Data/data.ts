@@ -172,7 +172,7 @@ export const HowToData = {
     ]
 }
 
-export const MoreAmazingFeauteData = [
+export const MoreAmazingFeauterData = [
     {
         image: featPlayer,
         head: "Media Viewer",
