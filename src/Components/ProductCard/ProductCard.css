@@ -42,3 +42,7 @@
     text-align: center;
     line-height: 25px;
 }
+
+.ProductCard-wrapper__more span:hover{
+    color: rgb(0, 110, 255);
+}

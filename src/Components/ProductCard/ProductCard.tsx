@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { IProductCard } from "../../types/types"
 import "./ProductCard.css"
 
@@ -15,7 +16,9 @@ export default function ProductCard({backgroundColor, name, description, image}:
                 <span>{description}</span>
             </div>
             <div className="ProductCard-wrapper__more">
-                <span>{'More >>'}</span>
+                <Link to={`${name}`}>
+                    <span>{'More >>'}</span>
+                </Link>    
             </div>
         </main>
     </div>

@@ -29,15 +29,15 @@ export default function Products({ dispatch }: IProducts) {
             <div className="Products__media-products-support">
               <SupportCard image={hdIcon} description="HD media support" />
               <SupportCard image={batchIcon} description="Batch download" />
-              <SupportCard image={fastIcon} description="10x fast download" />
+              <SupportCard image={fastIcon} description="8x fast download" />
             </div>
-            {products.map(product => (
+            {Object.entries(products).map((product) => (
               <ProductCard 
-                key={product.name}
-                backgroundColor={product.color}
-                name={product.name}
-                image={product.image}
-                description={product.description}
+                key={product[0]}
+                backgroundColor={product[1].color}
+                name={product[1].name}
+                image={product[1].image}
+                description={product[1].description}
               />
             ))}
           </main>

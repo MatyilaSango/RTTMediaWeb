@@ -81,30 +81,52 @@ export interface ISubscription {
   Uid: string;
 }
 
-export interface ISubscriptionDetailed{
-  userSubscription: ISubscription
-  setSubscriptions: React.Dispatch<React.SetStateAction<ISubscription[]>>
+export interface ISubscriptionDetailed {
+  userSubscription: ISubscription;
+  setSubscriptions: React.Dispatch<React.SetStateAction<ISubscription[]>>;
 }
 
-export type ISubscriptionView = ISubscriptionDetailed
+export type ISubscriptionView = ISubscriptionDetailed;
 
 export interface IItem {
-  name: string,
-  detail: string
+  name: string;
+  detail: string;
 }
 
-export interface IHowToUse{
-  name: string
-  bgColor: string
+export interface IHowToUse {
+  name: string;
+  bgColor: string;
 }
 
-export interface IHowToUseItemCard{
-  title: string,
-  steps: IStepCard[]
+export interface IHowToUseItemCard {
+  title: string;
+  steps: IStepCard[];
 }
 
-export interface IStepCard{
-  previewShot: string
-  heading: string
-  body: string
+export interface IStepCard {
+  previewShot: string;
+  heading: string;
+  body: string;
+}
+
+export interface IProduct {
+  dispatch: React.Dispatch<IAction>;
+  productName: string;
+  data: {
+    image: string,
+    name: string,
+    description: string,
+    color: string
+    logo: string
+  }
+}
+
+export interface ISubscriptionComponent {
+  isProductPage: boolean;
+}
+
+export interface IFeature {
+  image: string;
+  head: string;
+  body: string;
 }

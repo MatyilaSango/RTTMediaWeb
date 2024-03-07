@@ -1,0 +1,76 @@
+.Product-wrapper {
+    width: 100%;
+    padding: 30px;
+}
+
+.Product-wrapper__h1 {
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(20, 20, 20);
+}
+
+.Product-wrapper__product-info {
+    margin: 50px 0;
+    flex-flow: row wrap;
+    gap: 30px;
+}
+
+.Product-wrapper__product-info__description {
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+}
+
+.Product-wrapper__product-info__description-text {
+    max-width: 1200px;
+}
+
+.Product-wrapper__logo img {
+    height: 100px;
+    width: auto;
+}
+
+.Product-wrapper__more-amazing-features {
+    width: 100%;
+    background-color: #F3F6FD;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.Product-wrapper__more-amazing-features__head {
+    margin-bottom: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.Product-wrapper__more-amazing-features__features {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.SubcriptionPlansWrapper__head-text {
+    width: 100%;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 50px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1080px) {
+    .Product-wrapper__more-amazing-features__features {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .Product-wrapper__more-amazing-features__features {
+        grid-template-columns: 1fr;
+    }
+
+    .Product-wrapper__logo img {
+        height: 50px;
+    }
+}
