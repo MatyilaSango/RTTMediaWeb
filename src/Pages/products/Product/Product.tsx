@@ -4,12 +4,12 @@ import { MoreAmazingFeauterData } from "../../../Data/data"
 import { IProduct } from "../../../types/types"
 import "./Product.css"
 
-export default function Product({dispatch, productName, data}: IProduct) {
+export default function Product({ dispatch, productName, data }: IProduct) {
   return (
     <div className="page-body page-height">
       <div className="Product-wrapper page-max-width">
         <h1>
-          <span className="Product-wrapper__h1" style={{backgroundColor: `${data.color}50`}}>{productName}</span>
+          <span className="Product-wrapper__h1" style={{ backgroundColor: `${data.color}50` }}>{productName}</span>
         </h1>
         <div className="Product-wrapper__product-info center">
           <div className="Product-wrapper__logo">
@@ -33,7 +33,7 @@ export default function Product({dispatch, productName, data}: IProduct) {
           </div>
         </div>
 
-        <div id="subscription-plans" className="SubcriptionPlansWrapper">
+        <div id="subscription-plans" className="SubcriptionPlansWrapper SubcriptionPlansWrapper-product">
           <div className="SubcriptionPlansWrapper__head-text center">
             <span>Compare And Choose a Plan</span>
           </div>
