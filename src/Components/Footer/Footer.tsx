@@ -12,9 +12,15 @@ export default function Footer() {
                     <div className="FooterContentsStart">
                         <div className="FooterContentBox">
                             <h3>Products</h3><br />
-                            <p>ReddderDownloader</p><br />
-                            <p>TumMedia</p><br />
-                            <p>TwiMedia</p>
+                            <Link to="/products/ReddderDownloader">
+                                <p>ReddderDownloader</p><br />
+                            </Link>
+                            <Link to="/products/TumMedia">
+                                <p>TumMedia</p><br />
+                            </Link>
+                            <Link to="/products/TwiMedia">
+                                <p>TwiMedia</p>
+                            </Link>
                         </div>
                         <div className="FooterContentBox">
                             <h3>Help</h3><br />
