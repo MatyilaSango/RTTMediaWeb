@@ -35,7 +35,12 @@ export default function SignIn({dispatch}: ISignIn) {
                 Username: username,
                 Password: password
             })
-            .then(promise => promise.data)
+            .then(promise => {
+                if(promise.status === 204){
+                  throw new Error("Error")
+                }
+                return promise.data
+              })
             .then(userResponse => {
                 dispatch({type: ACCOUNT.SignIn, payload: {account: userResponse.data}})
                 navigate("/")
