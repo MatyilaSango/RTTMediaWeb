@@ -204,3 +204,34 @@ export const MoreAmazingFeauterData = [
         body: "Download images and videos at a speed of 8x faster compared to normal download speed. Using up to 8 multi-download connections."
     }
 ]
+
+export const PrivacyPolicyData = [
+    {
+        head: "PERSONAL INFORMATION",
+        text: "We may collect personal information from Users in a variety of ways in connection with activities, services, features or resources we make available on our Site. For example, we collect different information when you register, or when you make a purchase on one of our products."
+    },
+    {
+        head: "WEB PROWSER COOKIES",
+        text: "Our Site uses cookies to enhance User experience. We store the following in order to boost your experience, When you signed in we store a cookie for a limited time in order recorgnise you."
+    },
+    {
+        head: "HOW DO WE PROTECT YOUR INFORMATION",
+        text: "We adopt appropriate data collection, storage and processing practices and security measures to prevent unauthorized access, alteration, disclosure or destruction of your personal information, usernames, passwords, data changes and data stored on our website."
+    },
+    {
+        head: "INFORMATION SHARING",
+        text: "We do not share, sell, trade, or expose your information to others."
+    },
+    {
+        head: "HOW DO WE KEEP YOUR INFORMATION",
+        text: "We keep information as long as we need it."
+    },
+    {
+        head: "YOU ACCEPT THESE TERMS",
+        text: "Your use of this website means that you accept this policy. If you do not accept this policy, please do not use our website. Your continued use of this website following the posting of changes to this policy will mean that you accept those changes."
+    },
+    {
+        head: "HOW WILL YOU KNOW THE PRIVACY POLICY HAS CHANGED",
+        text: "If there are any changes to this policy we will notify you in advance. You will have the opportunity to review the revised policy before choosing to continue using our products."
+    }
+]
