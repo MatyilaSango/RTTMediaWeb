@@ -37,8 +37,10 @@ export default function Footer() {
                         </div>
                         <div className="FooterContentBox">
                             <h3>Legal</h3><br />
-                            <p>Terms of User</p><br />
-                            <p>Privacy Policy</p>
+                            <p>Terms of User</p><br />                        
+                            <Link to="/privacy-policy">
+                                <p>Privacy Policy</p>
+                            </Link>
                         </div>
                         <div className="FooterContentBox">
                             <h3>Company</h3><br />

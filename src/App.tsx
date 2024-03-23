@@ -16,6 +16,7 @@ import axios from 'axios';
 import HowToUse from './Pages/How-to-use/HowToUse';
 import Product from './Pages/products/Product/Product';
 import { products } from './Data/data';
+import PrivacyPolicy from './Pages/Privacy-policy/PrivacyPolicy';
 
 const reducer = (appState: IState, action: IAction) => {
   switch (action.type) {
@@ -77,6 +78,7 @@ function App() {
           <Route path='/how-to-use-reddderdownloader' element={<HowToUse name="ReddderDownloader" bgColor='#FF0000'/>} />
           <Route path='/how-to-use-twimedia' element={<HowToUse name="TwiMedia" bgColor='#1A8CD8'/>} />
           <Route path='/how-to-use-tummedia' element={<HowToUse name="TumMedia" bgColor='#2600A1'/>} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path='/sign-in' element={<SignIn dispatch={dispatch} />} />
           <Route path='/sign-up' element={<SignUp dispatch={dispatch} />} />
           <Route path='/account' element={<Account dispatch={dispatch} userAccount={appState.userAccount}/>}>
