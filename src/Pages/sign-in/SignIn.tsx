@@ -30,21 +30,17 @@ export default function SignIn({dispatch}: ISignIn) {
             setIsSignInLoading(prev => prev = true)
             incorrectRef.current = false
             
-            fetch("https://rtt-media-api.vercel.app/api/v1/users/log-in", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    Username: username,
-                    Password: password
-                })
-            })
+            axios.post("https://rtt-media-api.vercel.app/api/v1/users/log-in", {
+                Username: username,
+                Password: password
+            }, {headers:{
+                "Access-Control-Allow-Origin": "https://rttmediaweb.vercel.app"
+            }})
             .then(promise => {
                 if(promise.status === 204){
                   throw new Error("Error")
                 }
-                return promise.json()
+                return promise.data
               })
             .then(userResponse => {
                 dispatch({type: ACCOUNT.SignIn, payload: {account: userResponse.data}})
