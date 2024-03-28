@@ -33,9 +33,7 @@ export default function SignIn({dispatch}: ISignIn) {
             axios.post("https://rtt-media-api.vercel.app/api/v1/users/log-in", {
                 Username: username,
                 Password: password
-            }, {headers:{
-                "Access-Control-Allow-Origin": "https://rttmediaweb.vercel.app"
-            }})
+            })
             .then(promise => {
                 if(promise.status === 204){
                   throw new Error("Error")
