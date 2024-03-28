@@ -30,15 +30,21 @@ export default function SignIn({dispatch}: ISignIn) {
             setIsSignInLoading(prev => prev = true)
             incorrectRef.current = false
             
-            axios.post("https://rtt-media-api.vercel.app/api/v1/users/log-in", {
-                Username: username,
-                Password: password
+            fetch("https://rtt-media-api.vercel.app/api/v1/users/log-in", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    Username: username,
+                    Password: password
+                })
             })
             .then(promise => {
                 if(promise.status === 204){
                   throw new Error("Error")
                 }
-                return promise.data
+                return promise.json()
               })
             .then(userResponse => {
                 dispatch({type: ACCOUNT.SignIn, payload: {account: userResponse.data}})
