@@ -18,13 +18,11 @@ export default function Account({ dispatch, userAccount }: IAccount) {
   }, [dispatch])
 
   const handleLogOut = async () => {
-      axios.delete("https://rrt-media-server-api.vercel.app/api/tokens/clear", {
-          withCredentials: true,
-      })
+      axios.delete("https://rtt-media-api.vercel.app/api/v1/token/clear/all")
       .then(promise => promise.data)
       .then(deleteTokenResponse => {
         if(deleteTokenResponse.ok){  
-          dispatch({type: "signOut", payload: userAccount})
+          dispatch({type: ACCOUNT.signOut, payload: userAccount})
           navigate("/")
         }
       })

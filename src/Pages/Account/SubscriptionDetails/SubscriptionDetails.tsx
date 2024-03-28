@@ -3,6 +3,7 @@ import SubscriptionView from "../../../Components/Subscription/Subscription"
 import { IAccountDetails, ISubscription } from "../../../types/types"
 import "./SubscriptionDetails.css"
 import axios from "axios"
+axios.defaults.withCredentials = true
 
 export default function SubscriptionDetails({ object, dispatch }: IAccountDetails) {
     const [subscriptions, setSubscriptions] = useState<ISubscription[]>([])
@@ -10,7 +11,7 @@ export default function SubscriptionDetails({ object, dispatch }: IAccountDetail
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
-        axios.post("https://rrt-media-server-api.vercel.app/api/v1/subscription-user", {signal: signal})
+        axios.get("https://rtt-media-api.vercel.app/api/v1/subscriptions/user", {signal: signal})
             .then(data => data.data)
             .then(data => {
                 if(data.ok) setSubscriptions(prev => prev = data.data)

@@ -6,15 +6,16 @@ import { ISignUp } from "../../types/types"
 import { Link, useNavigate } from "react-router-dom"
 import { ACCOUNT } from "../../enums/enum"
 import Confirmation from "../../Components/Confirmation/Confirmation"
+import axios from "axios"
 
-export default function SignUp({dispatch}: ISignUp) {
+export default function SignUp({ dispatch }: ISignUp) {
     const [isSignUpLoading, setIsSignUpLoading] = useState<boolean>(false)
     const [isRegistered, setIsRegistered] = useState<boolean>(false)
     const navigate = useNavigate()
     let incorrectPasswordsRef = useRef(false)
 
     useEffect(() => {
-        dispatch({type: ACCOUNT.SignIn_Or_SignUp, payload: true})
+        dispatch({ type: ACCOUNT.SignIn_Or_SignUp, payload: true })
     }, [dispatch])
 
     const handleFormDetails = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -37,27 +38,21 @@ export default function SignUp({dispatch}: ISignUp) {
             setIsSignUpLoading(prev => prev = true)
             incorrectPasswordsRef.current = false
 
-            if(password !== confirmedPassword) {
+            if (password !== confirmedPassword) {
                 incorrectPasswordsRef.current = true
                 setIsSignUpLoading(prev => prev = false)
                 return
             }
-            
-            const userResponse = await (await fetch("https://rrt-media-server-api.vercel.app/api/v1/users", {
-                method: "POST",
-                headers: {
-                "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
+
+            const userResponse = await (await axios.post("https://rtt-media-api.vercel.app/api/v1/users/new-user", {
                 FirstName: firstName,
                 LastName: lastName,
                 Username: username,
                 Email: email,
                 Password: password
-                })
-            })).json()
-    
-            if(!userResponse.ok) {
+            })).data
+
+            if (!userResponse.ok) {
                 setIsSignUpLoading(prev => prev = false)
                 incorrectPasswordsRef.current = true
                 return
@@ -74,13 +69,13 @@ export default function SignUp({dispatch}: ISignUp) {
 
     return (
         <div className="page-body">
-            {isRegistered ? <Confirmation message="Signed up successfully." func={exitSignUp}/> : ""}
+            {isRegistered ? <Confirmation message="Signed up successfully." func={exitSignUp} /> : ""}
             <div className="SignUpWrapperCon page-max-width">
                 <div className="SignUp_wrapper">
                     <div className="SignUp_wrapper__head center">
-                    <Link to="/">
-                        <img className="SignUp_wrapper__head__exit" src={exitIcon} alt="" onClick={() => exitSignUp()} />
-                    </Link>
+                        <Link to="/">
+                            <img className="SignUp_wrapper__head__exit" src={exitIcon} alt="" onClick={() => exitSignUp()} />
+                        </Link>
                     </div>
                     <div className="SignUp_wrapper__body">
                         <div className="SignUp_wrapper__body_name">

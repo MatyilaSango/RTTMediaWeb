@@ -17,6 +17,7 @@ import HowToUse from './Pages/How-to-use/HowToUse';
 import Product from './Pages/products/Product/Product';
 import { products } from './Data/data';
 import PrivacyPolicy from './Pages/Privacy-policy/PrivacyPolicy';
+axios.defaults.withCredentials = true
 
 const reducer = (appState: IState, action: IAction) => {
   switch (action.type) {
@@ -51,7 +52,7 @@ function App() {
     if(!isAppRefresh){
       const abortController = new AbortController()
       const signal = abortController.signal
-      axios.get("https://rrt-media-server-api.vercel.app/api/v1/user/refresh", {signal: signal, withCredentials: true})
+      axios.get("https://rtt-media-api.vercel.app/api/v1/users/refresh", {signal: signal})
       .then(promise => promise.data)
       .then(response => {
         if(response.ok){

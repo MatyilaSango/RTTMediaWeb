@@ -8,6 +8,7 @@ import noProIcon from "../../icons/no_pro.svg"
 import yesPremiumIcon from "../../icons/yes_premium.svg"
 import noPremiumIcon from "../../icons/no_premium.svg"
 import { ISubscriptionComponent } from "../../types/types"
+axios.defaults.withCredentials = true
 
 export default function SubscriptionPlans({ isProductPage }: ISubscriptionComponent) {
     const [plans, setPlans] = useState<any[]>()
@@ -15,7 +16,7 @@ export default function SubscriptionPlans({ isProductPage }: ISubscriptionCompon
     useEffect(() => {
         const abortController = new AbortController()
         const signal = abortController.signal
-        axios.get("https://rrt-media-server-api.vercel.app/api/v1/plans/all", {signal: signal})
+        axios.get("https://rtt-media-api.vercel.app/api/v1/plans", {signal: signal})
             .then(data => data.data)
             .then(data => {
                 if(data.ok) setPlans(prev => prev = data.data)

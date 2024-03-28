@@ -2,11 +2,12 @@ import "./SubscriptionDetailed.css"
 import { ISubscriptionDetailed } from '../../types/types'
 import Item from "./Item/Item"
 import axios from "axios"
+axios.defaults.withCredentials = true
 
 export default function SubscriptionDetailed({userSubscription, setSubscriptions}: ISubscriptionDetailed) {
 
   const handleDeleteSubscription = () => {
-      axios.post("https://rrt-media-server-api.vercel.app/api/v1/subscription/delete", {Uid: userSubscription.Uid})
+      axios.delete(`https://rtt-media-api.vercel.app/api/v1/subscriptions/${userSubscription.Uid}`)
         .then(data => data.data)
         .then(data => {
           if(!data.ok) return;

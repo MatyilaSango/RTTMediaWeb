@@ -5,6 +5,7 @@ import loadingIcon from "../../../icons/update.svg"
 import axios from "axios"
 import { ACCOUNT } from "../../../enums/enum"
 import Confirmation from "../../../Components/Confirmation/Confirmation"
+axios.defaults.withCredentials = true
 
 export default function PersonalDetails({ object, dispatch }: IAccountDetails) {
     const [isUpdatingPersonal, setIsUpdatingPersonal] = useState<boolean>(false)
@@ -34,7 +35,7 @@ export default function PersonalDetails({ object, dispatch }: IAccountDetails) {
             if(username !== object.Username) updatingUserObject["Username"] = username
 
             if(Object.keys(updatingUserObject).length > 0){
-                axios.put("https://rrt-media-server-api.vercel.app/api/v1/user", updatingUserObject)
+                axios.put("https://rtt-media-api.vercel.app/api/v1/users", updatingUserObject)
                 .then(promise => promise.data)
                 .then(response => {
                     if(response.ok){
@@ -69,7 +70,7 @@ export default function PersonalDetails({ object, dispatch }: IAccountDetails) {
                 return
             }
 
-            axios.put("https://rrt-media-server-api.vercel.app/api/v1/user", {Password: password})
+            axios.put("https://rtt-media-api.vercel.app/api/v1/users", {Password: password})
             .then(promise => promise.data)
             .then(response => {
                 if(response.ok){
