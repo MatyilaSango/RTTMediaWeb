@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { ACCOUNT } from "../../enums/enum"
 import Confirmation from "../../Components/Confirmation/Confirmation"
 import axios from "axios"
+axios.defaults.withCredentials = true
 
 export default function SignUp({ dispatch }: ISignUp) {
     const [isSignUpLoading, setIsSignUpLoading] = useState<boolean>(false)

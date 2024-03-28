@@ -23,30 +23,30 @@ export default function PersonalDetails({ object, dispatch }: IAccountDetails) {
             const inputValues = Array.from(e.currentTarget)
             //@ts-ignore
             const firstName: string = inputValues[0].value
-            if(firstName !== object.FirstName) updatingUserObject["FirstName"] = firstName
+            if (firstName !== object.FirstName) updatingUserObject["FirstName"] = firstName
             //@ts-ignore
             const lastName: string = inputValues[1].value
-            if(lastName !== object.LastName) updatingUserObject["LastName"] = lastName
+            if (lastName !== object.LastName) updatingUserObject["LastName"] = lastName
             //@ts-ignore
             const email: string = inputValues[2].value
-            if(email !== object.Email) updatingUserObject["Email"] = email
+            if (email !== object.Email) updatingUserObject["Email"] = email
             //@ts-ignore
             const username: string = inputValues[3].value
-            if(username !== object.Username) updatingUserObject["Username"] = username
+            if (username !== object.Username) updatingUserObject["Username"] = username
 
-            if(Object.keys(updatingUserObject).length > 0){
+            if (Object.keys(updatingUserObject).length > 0) {
                 axios.put("https://rtt-media-api.vercel.app/api/v1/users", updatingUserObject)
-                .then(promise => promise.data)
-                .then(response => {
-                    if(response.ok){
+                    .then(promise => promise.data)
+                    .then(response => {
+                        if (response.ok) {
+                            setIsUpdatingPersonal(prev => prev = false)
+                            dispatch({ type: ACCOUNT.Updated, payload: { account: response.data } })
+                            setIsUpdated(prev => prev = true)
+                        }
+                    }).catch(error => {
                         setIsUpdatingPersonal(prev => prev = false)
-                        dispatch({type: ACCOUNT.Updated, payload: {account: response.data}})
-                        setIsUpdated(prev => prev = true)
-                    }
-                }).catch(error => {
-                    setIsUpdatingPersonal(prev => prev = false)
-                    alert(error.message)
-                })
+                        alert(error.message)
+                    })
             }
         }
     }
@@ -64,30 +64,30 @@ export default function PersonalDetails({ object, dispatch }: IAccountDetails) {
             const confirmedPassword: string = inputValues[1].value
 
             incorrectPasswordsRef.current = false
-            if(password !== confirmedPassword) {
+            if (password !== confirmedPassword) {
                 incorrectPasswordsRef.current = true
                 setIsUpdatingPassword(prev => prev = false)
                 return
             }
 
-            axios.put("https://rtt-media-api.vercel.app/api/v1/users", {Password: password})
-            .then(promise => promise.data)
-            .then(response => {
-                if(response.ok){
+            axios.put("https://rtt-media-api.vercel.app/api/v1/users", { Password: password })
+                .then(promise => promise.data)
+                .then(response => {
+                    if (response.ok) {
+                        setIsUpdatingPassword(prev => prev = false)
+                        dispatch({ type: ACCOUNT.Updated, payload: { account: response.data } })
+                        setIsUpdated(prev => prev = true)
+                    }
+                }).catch(error => {
                     setIsUpdatingPassword(prev => prev = false)
-                    dispatch({type: ACCOUNT.Updated, payload: {account: response.data}})
-                    setIsUpdated(prev => prev = true)
-                }
-            }).catch(error => {
-                setIsUpdatingPassword(prev => prev = false)
-                alert(error.message)
-            })
+                    alert(error.message)
+                })
         }
     }
 
     return (
         <div className="PersonalDetails-wrapper">
-            {isUpdated ? <Confirmation message="Updated successfully." func={() => {setIsUpdated(prev => prev = false)}}/> : ""}
+            {isUpdated ? <Confirmation message="Updated successfully." func={() => { setIsUpdated(prev => prev = false) }} /> : ""}
             <h3 className="PersonalDetails__heading">Personal Details</h3>
             <form onSubmit={handlePersonalFormDetails} className="PersonalDetails__form">
                 <div className="PersonalDetails__form-input">
